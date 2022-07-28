@@ -1,0 +1,34 @@
+.del{
+    margin-left:25px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-color:antiquewhite;
+}
+.all{
+    width:50vw;
+    height:10vh;
+    background-color:cadetblue;
+   margin-top:1vh;
+   padding-top:2vh;
+   text-align: left;
+   padding-left:1vw;
+ 
+ 
+   
+}
+.allfault{
+    margin-top:10vh;
+    margin-left:5vw;
+}
+.airc{
+    font-weight: bold;
+    font-size:large;
+}
+.station{
+    font-weight: bold;
+    font-size:large;
+}
+.fault{
+    font-weight: bold;
+    font-size:large;
+}

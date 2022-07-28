@@ -1,0 +1,55 @@
+.name{
+    padding-top:10vh;
+    
+}
+.inpname{
+width:15vw;
+height:4vh;
+}
+.inplastname{
+width:15vw;
+height:4vh;
+}
+.user2{
+ width:31vw;
+ height:4vh;
+}
+.pass2{
+width:31vw;
+height:4vh;
+}
+.userdiv{
+    margin-top:1vh;
+}
+.signuplower{
+    width:40vw;
+    height:80vh;
+    background-color:blanchedalmond;
+    margin-left:20vw;
+    margin-top:20vh;
+  
+}
+.upper{
+    padding-top:5vh;
+    margin-top:20vh;
+  
+}
+.p2{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:small;
+    margin-top:-2vh;
+    margin-left:5vw;
+    margin-right:5vw;
+}
+.p1{
+font-weight: bold;
+}
+.pasdiv{
+    margin-top:1vh;
+}
+.signupbtn{
+    width:50vh;
+    height:5vh;
+   margin-left:0vw;
+    margin-top:10vh;
+}

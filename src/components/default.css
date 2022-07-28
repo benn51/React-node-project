@@ -1,0 +1,24 @@
+
+ li{
+  list-style-type: none;
+   border-style:hidden;
+   border-radius:5px;
+   width:20vw;
+   background-color:coral;
+   height:4vh;
+   text-align:center;
+   margin-top:1vh;
+
+ 
+ }
+  
+.hdr{
+  
+  margin-left:5vw;
+  margin-top:15vh;
+}
+.allcomponents{
+  float:right;
+  margin-top:-25vh;
+ margin-right:10vw;
+}

@@ -1,0 +1,62 @@
+.ac{
+ padding-top:5vh;
+    
+}
+.fault{
+  padding-top:1vh;
+  
+}
+.loweradd{
+    text-align: left;
+    margin-left:15vw;
+    padding-top: 5vh;
+    max-width:fit-content;
+
+
+  }
+.station{
+  padding-top:1vh;
+}
+
+.acinp{
+   width:20vw;
+    height:4vh;
+   
+}
+
+.stinp{
+   width:20vw;
+    height:4vh;
+}
+.flinp{
+    padding-left:30vw;   width:15vw;
+    height:10vh;
+    border-radius: 5px;
+   
+}
+
+.abtn{
+    margin-right:35vw;
+    margin-top:4vh;
+    background-color:coral;
+    border-radius:10px;
+    border-style: hidden;
+    width:15vw;
+    height:5vh;
+}
+.noshow{
+    display:none;
+}
+.showDisc{
+    height:7vh;
+    width:50vw;
+    background-color:blanchedalmond;
+    border-radius:5px;
+    margin-top:4vh;
+   
+}
+.showentered {
+  padding:2vh;
+    margin-top:5vh;
+    font-weight:bold;
+    }

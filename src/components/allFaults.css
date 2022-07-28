@@ -1,0 +1,15 @@
+.retal{
+    margin-top:20px;
+}
+.allFault{
+    margin-left:200px;
+    margin-top:20px;
+    border-style: none;
+    border-radius:10px;
+    background-color:darkcyan;
+    height:35px;
+    width:200px;
+}
+.nofault{
+    margin-left:40vw;
+}

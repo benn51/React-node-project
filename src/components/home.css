@@ -1,0 +1,71 @@
+
+.home{
+  margin-left:30vw;
+  margin-top:7vh;
+  width:50vw;
+  height:60vh;
+     
+  }
+  .username{
+     padding-top:5vh;
+  }
+  .password{
+     padding-top:1vh;
+  }
+  .p{
+      width:40vw;
+      
+      font-style: bold ;
+      padding-top:4vh; 
+     padding-left: 5vw;
+  }
+  .userinp{
+      width:40vw;
+      height:4vh;
+      border-radius: 5px;
+      border-style: none;
+  }
+  .passinp{
+      width:40vw;
+      height:4vh;
+      border-radius: 5px;
+      border-style:hidden;
+  }
+ .googlebtn{
+     width:100vw; 
+     height:8vh;
+  }
+  .btngoogle{
+      margin-left:8vw;
+      margin-top:4vh;
+     
+  }
+  .manualbtndiv{
+       margin-top:3vh;
+      margin-left:0.5vw;
+  }
+  .manualbtn{
+      width:35vw;
+      height:5vh;
+      border-radius:6px;  
+      border-style: none;
+      background-color:maroon;
+  }
+  .or{
+      padding-top:3vh;
+  }
+  .uperhome{
+      background-color:beige;
+      height:60vh;
+  }
+  .lowerhome{
+      background-color:beige;
+      height:7vh;
+      margin-top:2vh;
+    
+  }
+  .plower{
+      padding-top:1.6vh;
+      font-size:small;
+  }
+  
