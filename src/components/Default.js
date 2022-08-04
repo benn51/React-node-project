@@ -31,7 +31,7 @@ const Default = () => {
       return (
         <div className="default" >
           <div className='hdr'>
-        <nav className='nav'> <li onClick={adFunc}>Addd Fault</li> <li onClick={retFunc}>Retrieve Info</li><li onClick={alFunc}> Show Entered </li></nav>
+        <nav className='nav'> <li onClick={adFunc}>Addd Fault</li> <li onClick={retFunc}>Retrieve Info</li><li onClick={alFunc}> Show Entered </li> <li>Home</li> <li>About</li></nav>
           </div>
 
       <div className='allcomponents'> 

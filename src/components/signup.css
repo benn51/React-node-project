@@ -48,8 +48,47 @@ font-weight: bold;
     margin-top:1vh;
 }
 .signupbtn{
-    width:50vh;
+    width:20vw;
     height:5vh;
-   margin-left:0vw;
-    margin-top:10vh;
+    margin-top:1vh;  
+}
+.supBtnDiv{
+  margin-top:2vh;   
+}
+.emaildiv{
+    margin-top:1vh;
+}
+.email{
+ width:31vw;
+ height:4vh;
+}
+.noname{
+    border-color: red;
+    width:15vw;
+height:4vh;
+      }
+.nolastname{
+        border-color: red;
+        width:15vw;
+       height:4vh;
+      }
+.noemail{
+border-color: red;
+width:31vw;
+height:4vh;
+      }
+.nopassword{
+        border-color: red;
+        width:31vw;
+        height:4vh;
+      }
+.noauth{
+    display: none;
+}
+.auth{
+    font-size:small;
+    color:red;
+}
+.signup{
+  
 }

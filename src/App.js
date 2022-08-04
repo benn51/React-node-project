@@ -7,11 +7,13 @@ import Home from './components/Home'
 import Test from './components/Test'
 import {arrFunc} from './api/index.js'
 function App() {
-arrFunc()
+//arrFunc()
   return (
     <BrowserRouter>
 <div className="App" >
-  <Test/>
+  <div className='header'>
+    <p className='headerp'>Aircraft Fault Tracker</p>
+  </div>
 <Routes>
   <Route exact path='/' element= {<Home/> }/>
   <Route exact path='/signup' element= {<Signup/> }/>

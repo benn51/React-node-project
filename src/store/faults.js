@@ -19,8 +19,25 @@ return [...state,action.payload]
         
     }
 })
+const authSlice= createSlice({
+  name:"authenticateState",
+  initialState:{isnewuser:false,isauthenticated:true,isauthorized:false},
+  reducers:{
+    authenticateuser(state,action){
+    return {...state,isauthenticated:action.payload}
+    },
+    authorizeuser(state,action){
+  return {...state,isauthorized:action.payload}
+    },
+    newuser(state,action){
+ return {...state,isnewuser:true}
+    }
+
+  }
+})
 export const action= slice.actions
+export const authAction= authSlice.actions
  const store= configureStore({
-    reducer:slice.reducer
+    reducer:{fault:slice.reducer,authentication:authSlice.reducer}
 })
 export default store

@@ -17,24 +17,18 @@ useEffect(()=>{
   google.accounts.id.renderButton(document.getElementById('googlebtn'),{
     theme: "outline", size: "large"
   } )
-},[])
+},[]) 
+
  const handleCallbackResponse=(response)=>{
  const googleToken= response.credential
 const decodedGoogleToken= jwtDecode(googleToken)
-         console.log(decodedGoogleToken)
-const googleProfileobject= {name:decodedGoogleToken.name,email:decodedGoogleToken.email,token:googleToken}
+       const googleProfileobject= {name:decodedGoogleToken.name,email:decodedGoogleToken.email,token:googleToken}
           localStorage.setItem('profileObject',JSON.stringify(googleProfileobject))
        navigate('/signedin')
-       console.log(googleProfileobject)
+     
     }
- 
   const [username,setUsername] = useState('')
   const[password,setPassword]=  useState('')
-
-const failurelogin= (err)=>{
-console.log(err)
-}
-
   return (
     <div className='home'>
       <div className='uperhome'> 

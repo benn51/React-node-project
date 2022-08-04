@@ -1,5 +1,6 @@
 import axios from 'axios'
-import {action} from '../store/faults'
+import {action,authAction} from '../store/faults'
+import  {useDispatch}  from 'react-redux'
 const API= axios.create({baseURL: "http://localhost:5000"})
 API.interceptors.request.use((req)=>{
 const token= JSON.parse(localStorage.getItem('profileObject')).token
@@ -31,7 +32,12 @@ const id= JSON.parse(localStorage.getItem('profileObject')).token
    const {data}= await API.get(`home/the/${id}`)
    console.log(data)
   }
-
+  export const createNewuser= async (user)=>{
+    const url="http://localhost:5000/home/newuser"
+    //const url= "https://bini-ac-fault-recorder.herokuapp.com/home/newuser"
+   const {data} = await axios.post(url,user)
+ }
+ 
 
 
 

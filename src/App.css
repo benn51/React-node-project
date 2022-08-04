@@ -1,6 +1,7 @@
 
  .App{
    text-align: center;
+  
  }
   .App-logo {
     height: 40vmin;
@@ -36,4 +37,17 @@
       transform: rotate(360deg);
     }
   }
-  
+  .header{
+    margin-top:5vh;
+    height:10vh;
+    background-color:darkgray;
+    width:50vw;
+    margin-left:20vw;
+
+   
+  }
+  .headerp{
+    padding-top:3vh;
+    font-family:monospace;
+    font-size:150%;
+  }

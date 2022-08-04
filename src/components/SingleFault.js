@@ -4,7 +4,7 @@ import './singlefault.css'
 import {useSelector} from 'react-redux'
 
 const SingleFault = () => {
- const all= useSelector(state=>state.map((aa)=>{return aa}))
+ const all= useSelector(state=>state.fault.map((aa)=>{return aa}))
  return (
     <div className='allfault'>
           {
