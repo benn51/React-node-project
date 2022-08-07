@@ -69,7 +69,7 @@ setIsemail(false)
   <input className='userinp' name='usernameOrEmail'   type="text" value={emailOrusername} onChange={aFunc} placeholder={"Username or Email"}/>
     </div>
 <div className='password'>
-<input className='passinp' type="text" name='password' onChange={bFunc} value={password} placeholder={"password"}/>
+<input className='passinp' type="password" name='password' onChange={bFunc} value={password} placeholder={"password"}/>
 </div>
 
 <div className='manualbtndiv'>

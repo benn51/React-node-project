@@ -57,10 +57,10 @@ const Signup = () => {
             const newUser={name:name,lastname:lastname,email:email,username:username,password:password} 
             const {data} = await axios.post(url,newUser)
        if(data.msg==='error'){
-           console.log('user is already exists ')
+           console.log('user already exists ')
           }
        else{
-        navigate('/signedin')
+        navigate('/')
            console.log('user registerded sucessfully')
           }
      }

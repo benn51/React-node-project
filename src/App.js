@@ -4,6 +4,7 @@ import './App.css';
 import {BrowserRouter ,Routes, Route} from 'react-router-dom'
 import Signup from './components/Signup'
 import Home from './components/Home'
+import Registered from './components/Registered'
 import Test from './components/Test'
 import {arrFunc} from './api/index.js'
 function App() {
@@ -18,7 +19,7 @@ function App() {
   <Route exact path='/' element= {<Home/> }/>
   <Route exact path='/signup' element= {<Signup/> }/>
   <Route exact path='/signedin' element= {<Default/> }/>
-  </Routes>
+</Routes>
    </div>
     </BrowserRouter>
 

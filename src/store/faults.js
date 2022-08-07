@@ -21,7 +21,7 @@ return [...state,action.payload]
 })
 const authSlice= createSlice({
   name:"authenticateState",
-  initialState:{isnewuser:false,isauthenticated:true,isauthorized:false,userNameOrEmail:'',password:''},
+  initialState:{isnewuser:false,isauthenticated:true,isauthorized:false,userNameOrEmail:'',password:'',user:''},
   reducers:{
     authenticateuser(state,action){
     return {...state,isauthenticated:action.payload}
@@ -37,7 +37,11 @@ const authSlice= createSlice({
     },
     getPassword(state,action){
 return {...state,password:action.payload}
+    },
+    getUser(state,action){
+return {...state,user:action.payload}
     }
+
 
   }
 })
