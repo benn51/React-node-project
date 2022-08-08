@@ -6,12 +6,12 @@ import {useDispatch , useSelector} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {useNavigate} from 'react-router'
 import  jwtDecode from 'jwt-decode'
-
+import {authAction} from '../store/faults'
 
 const Home = () => {
   const navigate= useNavigate()
+  const dispatch = useDispatch()
   const [isemail,setIsemail]= useState(false)
-  const usernameOrEmail = useSelector(state=>state.authentication.reducer)
   const [emailOrusername,setEmailOrusername]= useState('')
   const [password,setPassword]= useState('')
 useEffect(()=>{
@@ -24,13 +24,14 @@ useEffect(()=>{
     theme: "outline", size: "large"
   } )
 },[]) 
-
+// google login handler function
  const handleCallbackResponse=(response)=>{
  const googleToken= response.credential
 const decodedGoogleToken= jwtDecode(googleToken)
        const googleProfileobject= {name:decodedGoogleToken.name,email:decodedGoogleToken.email,token:googleToken}
           localStorage.setItem('profileObject',JSON.stringify(googleProfileobject))
        navigate('/signedin')
+       dispatch( authAction.authenticateUser(true))  // to protect the athenticated  route from acessed from the url
     }
     const aFunc=(e)=>{
       const emailcheck=e.currentTarget.value
@@ -44,20 +45,26 @@ const decodedGoogleToken= jwtDecode(googleToken)
      setPassword(e.currentTarget.value)
      console.log(password)
     }
+    // user login and authentication form 
     const tFunc=async()=>{
       const url= 'http://localhost:5000/home/userlogin'
+     // const url= "https://bini-ac-fault-recorder.herokuapp.com/home/userlogin"
       const userObj= {userOremail:emailOrusername,password:password,isEmail:isemail}
     const {data}= await axios.post(url,userObj)
+    
     if(data.status==='ok'){
-  navigate('/signedin')
+         navigate('/signedin')
+        dispatch( authAction.authenticateUser(true))  //// to protect the athenticated route from acessed from the url
     }
-    console.log(data)
+    
     }
-    const cFunc=(e)=>{
+const cFunc=(e)=>{
 e.preventDefault()
 console.log('submitted')
 tFunc()
 setIsemail(false)
+setEmailOrusername('')
+setPassword('')
     }
   
   return (

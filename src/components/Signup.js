@@ -15,7 +15,7 @@ const Signup = () => {
     const [password,setPassword]= useState('')
     const [email,setEmail]= useState('')
     const [check,setCheck]= useState({namee:true,lastnamee:true,emaile:true,passworde:true,auth:true,isauthenticated:false})
-   const isUserauthenticated = useSelector(state=>state.authentication.isauthenticated)
+  
     const aFunc= (e)=>{
         const newname= e.currentTarget.value
         setName(newname)
@@ -46,7 +46,7 @@ const Signup = () => {
    else{
     setCheck({...check,[currentName]:false}) 
    }
-   console.log('mouse is away')
+  
     }
     //function to check if sign up form is filled properly and email is not registered already in the database
     const createNewuser= async ()=>{

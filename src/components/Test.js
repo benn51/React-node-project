@@ -1,15 +1,15 @@
 import React from 'react'
 
 import axios from 'axios'
-import action from '../store/faults'
+import {authAction} from '../store/faults'
 import { useDispatch }  from 'react-redux'
 import {sampleGet} from '../api/index.js'
 const  Test=()=> {
-  const aFunc=async ()=>{
-    const url= 'http://localhost:5000/home/the'
-    const id = 'binyam'
-  const {data}= await axios.get(`${url}/${id}` )
-  console.log(data)
+  const aFunc= (key)=>{
+   const data={name:'binyam',age:12}
+    return async (dispatch)=>{
+      await  dispatch(authAction.getUser(data))
+   }
 
   }
 return (
