@@ -28,9 +28,12 @@ useEffect(()=>{
  const handleCallbackResponse=(response)=>{
  const googleToken= response.credential
 const decodedGoogleToken= jwtDecode(googleToken)
-       const googleProfileobject= {name:decodedGoogleToken.name,email:decodedGoogleToken.email,token:googleToken}
-          localStorage.setItem('profileObject',JSON.stringify(googleProfileobject))
-       navigate('/signedin')
+const name= decodedGoogleToken.name
+dispatch(authAction.displayLogedinUser(name))
+     //const googleProfileobject= {name:decodedGoogleToken.name,email:decodedGoogleToken.email,token:googleToken}
+         localStorage.setItem('authToken',JSON.stringify({token:googleToken}))
+         navigate('/signedin')
+       console.log(decodedGoogleToken)
        dispatch( authAction.authenticateUser(true))  // to protect the athenticated  route from acessed from the url
     }
     const aFunc=(e)=>{
@@ -51,9 +54,10 @@ const decodedGoogleToken= jwtDecode(googleToken)
      // const url= "https://bini-ac-fault-recorder.herokuapp.com/home/userlogin"
       const userObj= {userOremail:emailOrusername,password:password,isEmail:isemail}
     const {data}= await axios.post(url,userObj)
-    
-    if(data.status==='ok'){
+      if(data.status==='ok'){
          navigate('/signedin')
+         localStorage.setItem('authToken',JSON.stringify({token:data.acessToken}))
+         console.log(data.acessToken)
         dispatch( authAction.authenticateUser(true))  //// to protect the athenticated route from acessed from the url
     }
     

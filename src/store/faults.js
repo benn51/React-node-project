@@ -21,12 +21,28 @@ return [...state,action.payload]
 })
 const authSlice= createSlice({
   name:"authenticateState",
-  initialState:{isnewuser:false,isauthenticated:false,isauthorized:false,userNameOrEmail:'',password:'',user:''},
+  initialState:{isauthenticated:false,username:''},
+  //initialState:{isnewuser:false,isauthenticated:false,isauthorized:false,userNameOrEmail:'',password:'',user:''},
   reducers:{
     authenticateUser(state,action){
     return {...state,isauthenticated:action.payload}
     },
-    authorizeuser(state,action){
+    logOutuser(state,action){
+       return {...state,isauthenticated:false}
+    },
+    displayLogedinUser(state,action){
+return {...state,user:action.payload}
+    }
+    }
+})
+export const action= slice.actions
+export const authAction= authSlice.actions
+ const store= configureStore({
+    reducer:{fault:slice.reducer,authentication:authSlice.reducer}
+})
+export default store
+
+/*authorizeuser(state,action){
   return {...state,isauthorized:action.payload}
     },
     newuser(state,action){
@@ -42,12 +58,4 @@ return {...state,password:action.payload}
 return {...state,user:action.payload}
     }
 
-
-  }
-})
-export const action= slice.actions
-export const authAction= authSlice.actions
- const store= configureStore({
-    reducer:{fault:slice.reducer,authentication:authSlice.reducer}
-})
-export default store
+*/ 
