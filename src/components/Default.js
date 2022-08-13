@@ -19,29 +19,26 @@ const Default = () => {
      const adFunc=()=>{
        setSwap(true)
        setRetal(false)
-       console.log(swap)
+      
      }
-     const retFunc=()=>{
-       setSwap(false)
-       setRetal(false)
-       
-       console.log(swap)
-     }
-     const alFunc=()=>{
+       const alFunc=()=>{
       setRetal(true)
       dispatch(getAllFaults())
      }
      const logOutFunction= ()=>{
        localStorage.clear();
        dispatch(authAction.logOutuser())
-       navigate('/')
+       navigate('/home')
      }
-    
+    const showSinglePlaneFault=()=>{
+      setSwap(false)
+      setRetal(false)
+      navigate('/singleplane')
+    }
       return (
         <div className="default" >
-          <div className='userdetail'> {`well come  ${currentUser}`} </div>
           <div className='hdr'>
-        <nav className='nav'> <li onClick={adFunc}>Addd Fault</li> <li onClick={retFunc}>Retrieve Info</li><li onClick={alFunc}> Show Entered </li>  <li>About</li><li onClick={ logOutFunction}>Sign out</li></nav>
+        <nav className='nav'> <li onClick={adFunc}>Addd Fault</li> <li onClick={showSinglePlaneFault}>Search By Tail Number</li><li onClick={alFunc}> Show All Faults </li>  <li>About</li><li onClick={ logOutFunction}>Sign out</li></nav>
           </div>
 
       <div className='allcomponents'> 

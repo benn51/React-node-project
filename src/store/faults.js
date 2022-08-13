@@ -10,12 +10,18 @@ const slice= createSlice({
   getAll(state,action){
   return action.payload
   },
+  getfaultbyTailnumber(state,action){
+     return action.payload
+  },
   newFault(state,action){
 return [...state,action.payload]
   },
   deletSingleFault(state,action){
    return state.filter((aa)=>(aa._id!==action.payload))
- }
+ },
+clearState(state,action){
+return []
+}
         
     }
 })
@@ -31,7 +37,7 @@ const authSlice= createSlice({
        return {...state,isauthenticated:false}
     },
     displayLogedinUser(state,action){
-return {...state,user:action.payload}
+return {...state,username:action.payload}
     }
     }
 })

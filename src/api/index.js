@@ -28,10 +28,14 @@ export const getAllFaults= ()=>{
 
   export const sampleGet= async ()=>{
    const id= JSON.parse(localStorage.getItem('profileObject')).token
-
    const {data}= await API.get(`home/the/${id}`)
    console.log(data)
   }
+ //function to get fault of a single tail number
+export const singleFault = async (obj)=>{
+    const {data} = await API.post('home/one',obj)
+  return data
+}
   export const createNewuser= async (user)=>{
     const url="http://localhost:5000/home/newuser"
     //const url= "https://bini-ac-fault-recorder.herokuapp.com/home/newuser"

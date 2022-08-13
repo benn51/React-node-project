@@ -1,29 +1,45 @@
 import React from 'react';
 import Default from './components/Default'
+import {Link} from 'react-router-dom';
 import './App.css';
 import {BrowserRouter ,Routes, Route, Navigate} from 'react-router-dom'
 import {authAction} from './store/faults'
 import { useDispatch,useSelector } from 'react-redux';
 import Signup from './components/Signup'
 import Home from './components/Home'
+import About from './components/About.js'
+import Help from './components/Help.js'
 import Registered from './components/Registered'
 import Test from './components/Test'
-import {arrFunc} from './api/index.js'
+import Front from './components/Front'
+import SinglePlane from './components/SinglePlane';
 function App() {
   const userisAuthenticated= useSelector(state=>state.authentication.isauthenticated)
-const num= false
+  const currentUser= useSelector(state=>state.authentication.user)
+
   return (
     <BrowserRouter>
 <div className="App" >
-  <div className='header'>
-    <p className='headerp'>Aircraft Fault Tracker</p>
+  <div className='navbarcontainer'> 
+  <div className={!userisAuthenticated &&'nologedinuser'}><p style={{color:'white',marginRight:'60vw'}}>  {currentUser.name} </p> </div>
+   <div> <Link to ='/'> <li  className='li'>home</li></Link> </div>
+   <div><Link to ='/home'> <li  className='li'>fault tracker</li></Link></div>
+   <div><Link to ='/about'> <li  className='li'>about</li></Link></div>
+   <div><Link to ='/help'> <li  className='li'>help</li></Link></div>
+ 
+ 
   </div>
 <Routes>
-    <Route exact path='/' element= { <Home/> } /> 
+  <Route exact path='/' element= {<Front/>}/>
+  <Route exact path='/home' element= { <Home/> } /> 
   <Route exact path='/signup' element= {<Signup/> }/>
   <Route exact path='/signedin' element= { !userisAuthenticated? <Navigate to = '/'/>: <Default/> }/>
+  <Route exact path='/singleplane' element={<SinglePlane/>}/>
+  <Route exact path='/help' element={<Help/>}/>
+  <Route exact path='/about' element={<About/>}/>
+
 </Routes>
-   </div>
+</div>
     </BrowserRouter>
 
     
