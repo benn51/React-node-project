@@ -1,10 +1,10 @@
 
 .all{
     width:55vw;
-    height:auto;
+    height:15vh;
     margin-left:2vw;
     display:flex;
-   justify-content:start;
+   justify-content:end;
     align-items:start;
    border-bottom-style: outset;
    
@@ -13,35 +13,35 @@
     margin-top:5vh; 
     background-color:aliceblue;
     width:60vw;
+    height:100%;
     
 }
-.airc{
-    font-weight: bold;
-    font-size:large;
-}
-.station{
-    font-weight: bold;
-    font-size:large;
-}
+
+
 .fault{
    
-    font-size:smaller;
+    font-size:small;
+    align-self: start;
 }
 .deletecomponent{
    align-self:end;
-   margin-left:20vw;
+  
    
 }
 
 .faultdiv{
+display:flex;
+justify-content:start;
 margin-left:1vw;
-width:30vw;
-    
+width:50vw;
+flex-direction: column;
+margin-top:1vh;    
 }
 .tailnumber{
-    margin:0px;
-    padding-left:0px;
+    margin:0vw;
+    align-self:start;
+   
 }
 .innerfault{
-    margin:0px;
+   
 }

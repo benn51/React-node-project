@@ -19,7 +19,7 @@
  
 }
 .allcomponents{
- margin-left:4vw;
+ margin-left:7vw;
  width:200vw;
  margin-top:5vh;
  height:40vh;
@@ -27,5 +27,5 @@
 .defaultcontainer{
   display:flex;
   justify-content:center;
-  align-items:center;
+  align-items:start;
 }

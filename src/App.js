@@ -21,12 +21,12 @@ function App() {
     <BrowserRouter>
 <div className="App" >
   <div className='navbarcontainer'> 
-  <div className={userisAuthenticated ?'showuser':'nologedinuser'}>  <Link style={{textDecoration:'none'}} to= {userisAuthenticated? '/signedin': '/home'}>     <p style={{color:'white'}}>  {currentUser} </p> </Link> </div>
+  <div className={userisAuthenticated ?'showuser':'nologedinuser'}>  <Link style={{textDecoration:'none'}} to= {userisAuthenticated? '/signedin': '/home'}><p style={{color:'white'}}>  {currentUser} </p> </Link> </div>
   <div className='item'> <Link style={{textDecoration:'none'}} to ='/'> <li  className='li'>home</li></Link> </div>
    <div className='item'><Link style={{textDecoration:'none'}} to   =  {userisAuthenticated? '/signedin': '/home'}  > <li  className='li'>fault tracker</li></Link></div>
    <div className='item'><Link style={{textDecoration:'none'}} to ='/about'> <li  className='li'>about</li></Link></div>
    <div className='item'><Link style={{textDecoration:'none'}} to ='/help'> <li  className='li'>help</li></Link></div>
- 
+   <div className='dropdown'> </div>
  
   </div>
 <Routes>

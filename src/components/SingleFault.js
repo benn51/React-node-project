@@ -12,18 +12,10 @@ const SingleFault = () => {
          all.map((aa)=>{
          return  <div className='all'>
            <div className='faultdiv'> 
-           <div className='innerfault'>
-             <p className='tailnumber'>Tail Number:{aa.ac}</p> 
-             <p className='tailnumber'>Date entered:dat3</p>
-              <p className='tailnumber'> Station: {aa.station}</p>
-           </div>
-          
-           <div className='faultdescription'> 
-            <p className='fault'>Fault Description {aa.fault}</p> 
-           </div>
-           
-        
-           </div>
+           <span className='tailnumber'>Tail Number:{aa.ac}  Station: {aa.station} </span> 
+            <span className='tailnumber'>  Date entered: dat3</span>
+             <p className='fault'>Fault Description {aa.fault}</p> 
+          </div>
               <div className='deletecomponent'> <Delete id={aa._id}/>  </div>   
               </div>
                

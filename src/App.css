@@ -35,19 +35,19 @@
     background-color:midnightblue;
     justify-content:end;
     align-items: center;
-   
     cursor:pointer;
   }
   .li{
     width:8vw;
-    
-   }
+    color: white;
+    }
    
  Link{
   text-decoration:  none;
  }
  li{
    list-style-type:none;
+  
  }
   .nologedinuser{
     display:none;
@@ -59,11 +59,9 @@
   }
 
   .item{
-    background-color:cornsilk;
-   display:flex;
-   justify-content:flex-start; 
+  justify-content:flex-start; 
    align-items: center;
   border-radius:5px;
-    height:4vh;
-    margin-right:2vw;
+  height:4vh;
+  margin-right:0vw;
   }

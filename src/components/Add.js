@@ -59,7 +59,7 @@ setStation(e.target.value)
 </div>
 <div className='fault'>
 
-  <textarea placeholder='fault decription' onChange={fFunc} className='flinp' type="text" name="fault" value={fault}> </textarea>
+  <textarea placeholder='fault decription' onChange={fFunc} className='flinp' type="text" name="fault" value={fault}></textarea>
 </div>
 <button onClick={uFunc} className='abtn'>Add Fault</button>
 </form>
