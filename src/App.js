@@ -15,17 +15,17 @@ import Front from './components/Front'
 import SinglePlane from './components/SinglePlane';
 function App() {
   const userisAuthenticated= useSelector(state=>state.authentication.isauthenticated)
-  const currentUser= useSelector(state=>state.authentication.user)
+  const currentUser= useSelector(state=>state.authentication.username)
 
   return (
     <BrowserRouter>
 <div className="App" >
   <div className='navbarcontainer'> 
-  <div className={!userisAuthenticated &&'nologedinuser'}><p style={{color:'white',marginRight:'60vw'}}>  {currentUser.name} </p> </div>
-   <div> <Link to ='/'> <li  className='li'>home</li></Link> </div>
-   <div><Link to ='/home'> <li  className='li'>fault tracker</li></Link></div>
-   <div><Link to ='/about'> <li  className='li'>about</li></Link></div>
-   <div><Link to ='/help'> <li  className='li'>help</li></Link></div>
+  <div className={userisAuthenticated ?'showuser':'nologedinuser'}>  <Link style={{textDecoration:'none'}} to= {userisAuthenticated? '/signedin': '/home'}>     <p style={{color:'white'}}>  {currentUser} </p> </Link> </div>
+  <div className='item'> <Link style={{textDecoration:'none'}} to ='/'> <li  className='li'>home</li></Link> </div>
+   <div className='item'><Link style={{textDecoration:'none'}} to   =  {userisAuthenticated? '/signedin': '/home'}  > <li  className='li'>fault tracker</li></Link></div>
+   <div className='item'><Link style={{textDecoration:'none'}} to ='/about'> <li  className='li'>about</li></Link></div>
+   <div className='item'><Link style={{textDecoration:'none'}} to ='/help'> <li  className='li'>help</li></Link></div>
  
  
   </div>
@@ -33,7 +33,7 @@ function App() {
   <Route exact path='/' element= {<Front/>}/>
   <Route exact path='/home' element= { <Home/> } /> 
   <Route exact path='/signup' element= {<Signup/> }/>
-  <Route exact path='/signedin' element= { !userisAuthenticated? <Navigate to = '/'/>: <Default/> }/>
+  <Route exact path='/signedin' element= { !userisAuthenticated? <Navigate to = '/home'/>: <Default/> }/>
   <Route exact path='/singleplane' element={<SinglePlane/>}/>
   <Route exact path='/help' element={<Help/>}/>
   <Route exact path='/about' element={<About/>}/>

@@ -10,7 +10,7 @@ import './default.css';
 import { useState,useEffect } from 'react'
 import {authAction} from '../store/faults'
 const Default = () => {
-  const currentUser= useSelector(state=>state.authentication.user)
+  const currentUser= useSelector(state=>state.authentication.username)
   const dispatch= useDispatch()
    const navigate= useNavigate()
     const [swap,setSwap]= useState(true)
@@ -37,17 +37,24 @@ const Default = () => {
     }
       return (
         <div className="default" >
-          <div className='hdr'>
-        <nav className='nav'> <li onClick={adFunc}>Addd Fault</li> <li onClick={showSinglePlaneFault}>Search By Tail Number</li><li onClick={alFunc}> Show All Faults </li>  <li>About</li><li onClick={ logOutFunction}>Sign out</li></nav>
-          </div>
+         
+      <div className='defaultcontainer'>
+        <div className='hdr'>
+         <li className='side' onClick={adFunc}>Addd Fault</li>
+         <li li className='side' onClick={showSinglePlaneFault}>Search By Tail Number</li>
+         <li li className='side' onClick={alFunc}> Show All Faults </li> 
+         <li li className='side' >About</li>
+         <li li className='side' onClick={ logOutFunction}>Sign out</li>
+        </div>
 
       <div className='allcomponents'> 
-     
-    {!retal&&swap&&<Add/>}
+     {!retal&&swap&&<Add/>}
     {retal&&<AllFaults/>}
     {!retal&& !swap&&<Home/>}
   
     </div>
+         </div>
+         
    </div>
       )
     }

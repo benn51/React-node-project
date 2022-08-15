@@ -39,12 +39,31 @@
     cursor:pointer;
   }
   .li{
-    background-color:cornsilk;
-    width:7vw;
-    margin-left:2vw;
-    height:3vh;
-    margin-right: 3vw;;
-  }
+    width:8vw;
+    
+   }
+   
+ Link{
+  text-decoration:  none;
+ }
+ li{
+   list-style-type:none;
+ }
   .nologedinuser{
     display:none;
+  }
+  .showuser{
+   width:15vw;
+   height:6vh;
+   margin-right:45vw;
+  }
+
+  .item{
+    background-color:cornsilk;
+   display:flex;
+   justify-content:flex-start; 
+   align-items: center;
+  border-radius:5px;
+    height:4vh;
+    margin-right:2vw;
   }

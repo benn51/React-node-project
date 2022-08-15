@@ -60,7 +60,7 @@ const Signup = () => {
            console.log('user already exists ')
           }
        else{
-        navigate('/')
+        navigate('/home')
            console.log('user registerded sucessfully')
           }
      }
@@ -80,7 +80,8 @@ setEmail('')
    }
 return (
     <div className='signup'>
-        <form >  
+        <div className='allsignup'>
+            <form >  
 <div className='signuplower'>
 <div className='upper'><p className='p1'>Aircraft Fault Tracker</p>
      <p className='p2'> Sign Up To Track Aircraft Fault Records From All Stations </p>
@@ -109,6 +110,8 @@ return (
 </div>
 
 </form>
+        </div>
+        
 
  </div>
   )

@@ -39,6 +39,7 @@ const authSlice= createSlice({
     displayLogedinUser(state,action){
 return {...state,username:action.payload}
     }
+    
     }
 })
 export const action= slice.actions
@@ -48,20 +49,5 @@ export const authAction= authSlice.actions
 })
 export default store
 
-/*authorizeuser(state,action){
-  return {...state,isauthorized:action.payload}
-    },
-    newuser(state,action){
- return {...state,isnewuser:true}
-    },
-    getUsernameOrEmail(state,action){
-       return {...state,userNameOrEmail:action.payload}
-    },
-    getPassword(state,action){
-return {...state,password:action.payload}
-    },
-    getUser(state,action){
-return {...state,user:action.payload}
-    }
 
-*/ 
+

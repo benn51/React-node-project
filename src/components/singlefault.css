@@ -1,24 +1,19 @@
-.del{
-    margin-left:25px;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    background-color:antiquewhite;
-}
+
 .all{
-    width:50vw;
-    height:10vh;
-    background-color:cadetblue;
-   margin-top:1vh;
-   padding-top:2vh;
-   text-align: left;
-   padding-left:1vw;
- 
- 
+    width:55vw;
+    height:auto;
+    margin-left:2vw;
+    display:flex;
+   justify-content:start;
+    align-items:start;
+   border-bottom-style: outset;
    
 }
 .allfault{
-    margin-top:10vh;
-    margin-left:5vw;
+    margin-top:5vh; 
+    background-color:aliceblue;
+    width:60vw;
+    
 }
 .airc{
     font-weight: bold;
@@ -29,6 +24,24 @@
     font-size:large;
 }
 .fault{
-    font-weight: bold;
-    font-size:large;
+   
+    font-size:smaller;
+}
+.deletecomponent{
+   align-self:end;
+   margin-left:20vw;
+   
+}
+
+.faultdiv{
+margin-left:1vw;
+width:30vw;
+    
+}
+.tailnumber{
+    margin:0px;
+    padding-left:0px;
+}
+.innerfault{
+    margin:0px;
 }

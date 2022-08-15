@@ -1,17 +1,18 @@
 import React, { useState,useEffect } from 'react'
-import './single.css'
+import './singleplane.css'
 import { singleFault } from '../api/index.js'
 import {useDispatch,useSelector} from 'react-redux'
 import { action } from '../store/faults'
+import {useNavigate} from 'react-router-dom'
 const SinglePlane = () => {
   const dispatch= useDispatch()
+  const navigate = useNavigate()
   const [enteredtailNumber,setEnteredtailNumber]=useState('')
-  const [show,setShow] =useState(false)
+  const [faultarray,setFaultarray] = useState([])
+  const [show,setShow] =useState(true)
   const faults= useSelector(state=>state.fault.map((key)=> {return  key}))
- useEffect(()=>{
-    dispatch(action.clearState())
-   
-  },[])
+
+ 
   const aFunc=(e)=>{
     setEnteredtailNumber(e.currentTarget.value)
   }
@@ -21,16 +22,23 @@ const SinglePlane = () => {
     const returnedFault= await singleFault(faultObject)
     dispatch(action.getfaultbyTailnumber(returnedFault))
     setEnteredtailNumber('')
-    setShow(false) // to change fault display off initially 
+    setShow(false) // to change fault discription display off initially 
   }
   const toggleDiscription=()=>{
     setShow(!show)
-   
+    setFaultarray(faults)
+   console.log(faultarray)
+  }
+  const backFunction =()=>{
+    navigate('/signedin')
   }
   return (
     <div className='container'>
+      <div>
+        <button onClick={backFunction}   className='upperbutton'> back</button>
+      </div>
 <form>
-<div id='formcontainer'>
+<div className='formcontainer'>
  <label htmlFor="tailnumber" className='formlabel'> Tail Number</label>   
 <input className='forminput'   type="text" name='tailnumber' placeholder='enter tail number only' onChange={aFunc} value={enteredtailNumber}/>
 <div>
@@ -38,28 +46,24 @@ const SinglePlane = () => {
 </div>
 </div>
 </form>
+<div  onClick={toggleDiscription} className='taildiv'> hi  </div>
 {
   faults.map((fault)=>{
-    return(
-       <div  onClick={toggleDiscription} className='taildiv'> <p > {fault.ac} </p>  
-       <div className={show? `showDiscription`:'noshowdescription'} >   {fault.fault}</div>
-        </div> 
-      )
-    
+         return (
+      <div>
+       <div className={show? `showDiscription`:'noshowdescription'} >{fault.fault}</div>
+       
+    </div>
+         )
+  }  
+   
+  )
 
-      
-  })
-}
-<div className='lowercontainer'>
-
-
-</div>
-
-
-
-
+}  
     </div>
   )
+
 }
 
 export default SinglePlane
+///<div  onClick={toggleDiscription} className='taildiv'> <p > {faults[0].ac} </p>   </div>

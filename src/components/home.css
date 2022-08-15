@@ -2,7 +2,7 @@
 .home{
   margin-left:30vw;
   margin-top:7vh;
-  width:50vw;
+  width:40vw;
   height:60vh;
      
   }
@@ -14,19 +14,18 @@
   }
   .p{
       width:40vw;
-      
       font-style: bold ;
       padding-top:4vh; 
-     padding-left: 5vw;
+     padding-left: 1vw;
   }
   .userinp{
-      width:40vw;
+      width:30vw;
       height:4vh;
       border-radius: 5px;
       border-style: none;
   }
   .passinp{
-      width:40vw;
+      width:30vw;
       height:4vh;
       border-radius: 5px;
       border-style:hidden;
@@ -45,7 +44,7 @@
       margin-left:0.5vw;
   }
   .manualbtn{
-      width:35vw;
+      width:25vw;
       height:5vh;
       border-radius:6px;  
       border-style: none;

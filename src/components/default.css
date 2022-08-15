@@ -1,5 +1,5 @@
 
- li{
+ .side{
   list-style-type: none;
    border-style:hidden;
    border-radius:5px;
@@ -15,10 +15,17 @@
 .hdr{
   
   margin-left:5vw;
-  margin-top:15vh;
+  margin-top:10vh;
+ 
 }
 .allcomponents{
-  float:right;
-  margin-top:-35vh;
- margin-right:10vw;
+ margin-left:4vw;
+ width:200vw;
+ margin-top:5vh;
+ height:40vh;
+}
+.defaultcontainer{
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }

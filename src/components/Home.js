@@ -25,16 +25,15 @@ useEffect(()=>{
   } )
 },[]) 
 // google login handler function
- const handleCallbackResponse=(response)=>{
- const googleToken= response.credential
+ const handleCallbackResponse= async (response)=>{
+ const googleToken= await response.credential
 const decodedGoogleToken= jwtDecode(googleToken)
 const name= decodedGoogleToken.name
 dispatch(authAction.displayLogedinUser(name))
-     //const googleProfileobject= {name:decodedGoogleToken.name,email:decodedGoogleToken.email,token:googleToken}
+     
          localStorage.setItem('authToken',JSON.stringify({token:googleToken}))
          navigate('/signedin')
-       console.log(decodedGoogleToken)
-       dispatch( authAction.authenticateUser(true))  // to protect the athenticated  route from acessed from the url
+        dispatch( authAction.authenticateUser(true))  // to protect the athenticated  route from acessed from the url
     }
     const aFunc=(e)=>{
       const emailcheck=e.currentTarget.value
@@ -46,7 +45,7 @@ dispatch(authAction.displayLogedinUser(name))
     }
     const bFunc=(e)=>{
      setPassword(e.currentTarget.value)
-     console.log(password)
+    
     }
     // user login and authentication form 
     const tFunc=async()=>{
@@ -55,16 +54,19 @@ dispatch(authAction.displayLogedinUser(name))
       const userObj= {userOremail:emailOrusername,password:password,isEmail:isemail}
     const {data}= await axios.post(url,userObj)
       if(data.status==='ok'){
-         navigate('/signedin')
+        const user= data.msg
+        const lname= user[0].lastname
+        const name= user[0].name
+        const fname =name +' ' +lname
+        dispatch(authAction.displayLogedinUser(fname))
+        navigate('/signedin')
          localStorage.setItem('authToken',JSON.stringify({token:data.acessToken}))
-         console.log(data.acessToken)
-        dispatch( authAction.authenticateUser(true))  //// to protect the athenticated route from acessed from the url
+        dispatch( authAction.authenticateUser(true))  //// to protect the athenticated route from getting acessed from the url
     }
     
     }
 const cFunc=(e)=>{
 e.preventDefault()
-console.log('submitted')
 tFunc()
 setIsemail(false)
 setEmailOrusername('')

@@ -1,6 +1,6 @@
 .formcontainer{
     display:flex;
-   justify-content:start;
+   justify-content:flex-start;
    margin-top:8vh;
 }
 .formlabel{
@@ -12,15 +12,14 @@
     height:4vh;
     width:20vw;
 }
+
 .formbutton{
      width:15vw;
     background-color:coral;
     margin-left:4vw;
     height:5vh;
 }
-.showDiscription {
- 
-}
+
 
 .noshowdescription {
 display: none;
