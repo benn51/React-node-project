@@ -7,17 +7,18 @@ const token= JSON.parse(localStorage.getItem('authToken')).token
 req.headers.authorization = `Bearer ${token}`
 return req;
 })
-
+//function to get all faults from the database
 export const getAllFaults= ()=>{ 
    //const url= "http://localhost:5000/home/in"
    //const url="https://bini-mata.herokuapp.com/home/new"
    //const url= "https://bini-ac-fault-recorder.herokuapp.com/home/in"
     return async (dispatch)=>{
-//const id= JSON.parse(localStorage.getItem('authToken')).token
-        const {data} = await API.get(`home/in`)
+       const {data} = await API.get(`home/in`)
         dispatch(action.getAll(data)) 
-        console.log(data)}
+      
+      }
   }
+  //function to delete fault entries from the database
   export const delFunc= (id)=>{
    // const url= "https://bini-ac-fault-recorder.herokuapp.com/home"
     const url= "http://localhost:5000/home"
@@ -36,12 +37,30 @@ export const singleFault = async (obj)=>{
     const {data} = await API.post('home/one',obj)
   return data
 }
+//function tocreate new user
   export const createNewuser= async (user)=>{
     const url="http://localhost:5000/home/newuser"
     //const url= "https://bini-ac-fault-recorder.herokuapp.com/home/newuser"
    const {data} = await axios.post(url,user)
  }
- 
+ export const previousPagefunc=()=>{
+  return async (dispatch)=>{
+    const {data} = await API.get(`home/in`)
+     dispatch(action.getAll(data)) 
+   
+   }
+
+ }
+ export const nextPagefunc=()=>{
+  return async (dispatch)=>{
+    const {data} = await API.get(`home/in`)
+    let pagenumber=0
+    let startindex= pagenumber-
+     dispatch(action.getAll(data)) 
+   
+   }
+
+ }
 
 
 

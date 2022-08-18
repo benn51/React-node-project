@@ -1,0 +1,16 @@
+.help{
+    width:70vw;
+   
+    background-color:bisque;
+}
+.item{
+    margin:0;
+    padding:0;
+}
+.item.p {
+    margin:0;
+    padding:0;
+}
+.noshow{
+    display:none;
+}

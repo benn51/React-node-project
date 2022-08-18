@@ -63,5 +63,45 @@
    align-items: center;
   border-radius:5px;
   height:4vh;
-  margin-right:0vw;
+ 
+  }
+  .helpdropdown{
+    display:flex;
+    width:9vw;
+    position:absolute;
+    top:55px;
+    left:91vw;
+    height:40vh;
+    margin-right:10vw;
+    color: white;
+    font-size:small;
+    background-color:midnightblue;
+   flex-direction:column;
+   justify-content:space-evenly;
+   align-items: center;
+   border-radius:5px;
+  }
+  .noshowmenu{
+    display:none;
+  }
+  .uppermenu{
+    margin-top:-2px;
+    padding-top:1vh;
+  }
+  .uppermenu:hover {
+    background-color:blue;
+   
+  }
+  
+  .helpdropdown li{
+    padding-left:0.5vw;
+    padding-right:0.5vw;
+    background-color:midnightblue;
+    height:4vh;
+    width:6vw;
+    color: white;
+ 
+  }
+  .helpdropdown li:hover {
+ background-color:blue;
   }

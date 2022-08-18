@@ -19,7 +19,7 @@ const Default = () => {
      const adFunc=()=>{
        setSwap(true)
        setRetal(false)
-      
+     
      }
        const alFunc=()=>{
       setRetal(true)
