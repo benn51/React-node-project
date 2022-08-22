@@ -6,3 +6,10 @@
 .nofault{
     margin-left:40vw;
 }
+.movebtn{
+   display: flex;
+    justify-content:start;
+}
+.nxtprevbtn{
+    margin-left:3vw;
+}

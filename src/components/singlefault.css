@@ -1,7 +1,7 @@
 
 .all{
     width:55vw;
-    height:15vh;
+    height:25vh;
     margin-left:2vw;
     display:flex;
    justify-content:end;
@@ -24,9 +24,7 @@
     align-self: start;
 }
 .deletecomponent{
-   align-self:end;
-  
-   
+   align-self:end;  
 }
 
 .faultdiv{
@@ -43,5 +41,13 @@ margin-top:1vh;
    
 }
 .innerfault{
+   
+}
+.dontshow{
+    display:none;
+    height:2vh;
+}
+
+.solutionclass{
    
 }

@@ -1,31 +1,45 @@
 
  .side{
   list-style-type: none;
-   border-style:hidden;
+  padding-top:1vh;
    border-radius:5px;
    width:20vw;
-   background-color:coral;
    height:4vh;
    text-align:center;
-   margin-top:1vh;
-
- 
+   border-style: inset;
+ }
+ .side:hover{
+   background-color:antiquewhite;
  }
   
 .hdr{
-  
+  align-self: start;
   margin-left:5vw;
   margin-top:10vh;
- 
+   height:70vh;
+   width:70vw;
+   border-style:solid;
+   border-color: black;
+   display: flex;
+   flex-direction: column;
+   justify-content:space-evenly;
+   align-items: center;
 }
 .allcomponents{
- margin-left:7vw;
- width:200vw;
- margin-top:5vh;
- height:40vh;
+ margin-left:5vw;
+ width:100vw;
+ margin-top:10vh;
+ height:auto;
+ border-style:solid;
+ 
+
+ 
 }
 .defaultcontainer{
   display:flex;
   justify-content:center;
   align-items:start;
+   height:100vh;
+   width:100vw;
+
 }

@@ -10,6 +10,7 @@ import Home from './components/Home'
 import About from './components/About.js'
 import Help from './components/Help.js'
 import Helpdetail from './components/Helpdetail'
+import {FaAngleDown} from 'react-icons/fa'
 import Registered from './components/Registered'
 import Test from './components/Test'
 import Front from './components/Front'
@@ -24,6 +25,7 @@ const showMenu=()=>{
 
   return (
     
+    
     <BrowserRouter>
 <div className="App" >
 
@@ -32,7 +34,7 @@ const showMenu=()=>{
   <div className='item'> <Link style={{textDecoration:'none'}} to ='/'> <li  className='li'>Home</li></Link> </div>
    <div className='item'><Link style={{textDecoration:'none'}} to   =  {userisAuthenticated? '/signedin': '/home'}  > <li  className='li'>Fault Tracker</li></Link></div>
    <div className='item'><Link style={{textDecoration:'none'}} to ='/about'> <li  className='li'>About</li></Link></div>
-   <div className='item'> <li  className='li' onClick={showMenu}>Help</li></div>
+   <div className='item'> <li  className='li' onClick={showMenu} > <FaAngleDown /> Help</li></div>
    <div className={menu?'helpdropdown':'noshowmenu'} onMouseLeave={()=>{setMenu(false)}}> 
     <Link style={{textDecoration:'none'}} to={'/helpdetail/instruction'}><li className='uppermenu'> Instruction</li></Link>
     <Link style={{textDecoration:'none'}} to ={'/helpdetail/enteredata'}> <li>Entering Data</li>  </Link>

@@ -7,13 +7,21 @@ const token= JSON.parse(localStorage.getItem('authToken')).token
 req.headers.authorization = `Bearer ${token}`
 return req;
 })
+
+//function to create new fault 
+export const createFault = async (newfault)=>{
+ const {data}= await  API.post('/home/new',newfault)
+ return data
+}
+
+
 //function to get all faults from the database
 export const getAllFaults= ()=>{ 
    //const url= "http://localhost:5000/home/in"
    //const url="https://bini-mata.herokuapp.com/home/new"
    //const url= "https://bini-ac-fault-recorder.herokuapp.com/home/in"
     return async (dispatch)=>{
-       const {data} = await API.get(`home/in`)
+       const {data} = await API.get(`home/in?page=1`)
         dispatch(action.getAll(data)) 
       
       }
@@ -45,22 +53,24 @@ export const singleFault = async (obj)=>{
  }
  export const previousPagefunc=()=>{
   return async (dispatch)=>{
-    const {data} = await API.get(`home/in`)
+    const {data} = await API.get(`home/in?page=10`)
      dispatch(action.getAll(data)) 
    
    }
-
+ 
  }
- export const nextPagefunc=()=>{
+ /*export const nextPagefunc=()=>{
   return async (dispatch)=>{
-    const {data} = await API.get(`home/in`)
-    let pagenumber=0
-    let startindex= pagenumber-
-     dispatch(action.getAll(data)) 
+  const {data} = await API.get(`home/in?page=10 type=dec`)
+  dispatch(action.getAll(data)) 
    
    }
 
- }
+ }*/
+ export const nextPagefunc = async ()=>{
+  const {data} = await API.get(`home/in?page= 4 type=dec`)
+return data
 
+}
 
 

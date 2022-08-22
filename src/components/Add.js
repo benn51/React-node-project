@@ -4,12 +4,17 @@ import {useState} from 'react'
 import {action} from '../store/faults'
 import {useDispatch} from 'react-redux'
 import axios from 'axios'
+import {createFault} from '../api/index.js'
  const Add = () => {
    const [ac,setAc]= useState('')
    const [fault,setFault]= useState('')
    const [station,setStation]= useState('')
+   const [solution,setSolution]= useState('')
+   const [showpart,setShowpart]= useState(false)
+   const [partname,setPartname]=useState('')
+   const [partnumber,setPartnumber]= useState('')
    const dispatch= useDispatch()
-   const[vart,setVart]= useState({ac:'',station:'',fault:''})
+   const[vart,setVart]= useState({ac:'',station:'',fault:'',solution:'',partname:'',partnumber:''})
    //setting states from the inputs
    const aFunc=(e)=>{
      setAc(e.target.value)
@@ -20,30 +25,38 @@ setFault(e.target.value)
    const sFunc=(e)=>{
 setStation(e.target.value)
    }
- 
+ const solutionFunc=(e)=>{
+  setSolution(e.target.value)
+  console.log(e.target.value)
+ }
+ const partnameFunc=(e)=>{
+setPartname(e.target.value)
+console.log(e.target.value)
+ }
+ const partnumberFunc=(e)=>{
+  setPartnumber(e.target.value)
+  console.log(e.target.value)
+   }
   //function triggerd by the submit button
    const uFunc = (e)=>{
      e.preventDefault()
-     finFunc()
+     //finFunc()
+     addFunc()
      setAc('')
      setFault('')
      setStation('')
+     setSolution('')
+     setPartname('')
+     setPartnumber('')
    }
-   const addFunc =  ()=>{
-    const url= "https://bini-ac-fault-recorder.herokuapp.com/home/new"
-    const newItem={ac:ac,fault:fault,station:station}
-    setVart(newItem)
-      return async (dispatch)=>{
-    await  axios.post(url,newItem)
-      dispatch(action.newFault(newItem))
+   const addFunc = async  ()=>{
+   // const url= "https://bini-ac-fault-recorder.herokuapp.com/home/new"
    
-    //console.log(data)
-   }
-      }
-    const finFunc=()=>{
-      dispatch(addFunc())
-      }
-   
+    const newItem={ac:ac,fault:fault,station:station,solution:solution,partname:partname,partnumber:partnumber}
+    const returnedFault= await createFault(newItem)
+    setVart(returnedFault)
+    dispatch(action.newFault(returnedFault))
+  }  
   return (
     <div>
      <div className='loweradd'>
@@ -58,10 +71,23 @@ setStation(e.target.value)
   <input placeholder='fault station' onChange={sFunc} className='stinp' type="text" name='station' value={station}/>
 </div>
 <div className='fault'>
-
-  <textarea placeholder='fault decription' onChange={fFunc} className='flinp' type="text" name="fault" value={fault}></textarea>
+<textarea placeholder='fault decription' onChange={fFunc} className='flinp' type="text" name="fault" maxLength={230} value={fault}></textarea>
 </div>
-<button onClick={uFunc} className='abtn'>Add Fault</button>
+<div className='solutions'>
+  <textarea name="remedies" id="" cols="30" rows="10" value={solution} onChange={solutionFunc} className='solution'></textarea>
+</div>
+<div className='checkbox' style={{marginTop:'1vh',marginBottom:'1vh'}} onChange={()=>{ setShowpart(!showpart) }}>
+  <label htmlFor="part movement" style={{fontSize:'smaller'}}>Have you replaced part</label>
+  <input type="checkbox" style={{marginLeft:'1vw'}} />
+</div>
+<div className={!showpart?'noshowpart':'replaceditems'}>
+  <div>
+  <input type="text" name="partname" className='replacedpartname' placeholder='enter part name' value={partname} onChange={partnameFunc}/>
+  <input type="text" name="partnumber" className='replacedpartnumber' placeholder='enter part number' value={partnumber} onChange={partnumberFunc} />
+</div>
+</div>
+
+<button onClick={uFunc} className='abtn' type='submit'>Add Fault</button>
 </form>
  </div>
  <div className={vart.ac?'showDisc':'noshow'}> 
@@ -71,3 +97,5 @@ setStation(e.target.value)
   )
  }
 export default Add
+/**eturn async (dispatch)=>{
+    await  axios.post(url,newItem) */

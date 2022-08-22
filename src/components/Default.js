@@ -42,7 +42,7 @@ const Default = () => {
         <div className='hdr'>
          <li className='side' onClick={adFunc}>Addd Fault</li>
          <li li className='side' onClick={showSinglePlaneFault}>Search By Tail Number</li>
-         <li li className='side' onClick={alFunc}> Show All Faults </li> 
+         <li li className='side' onClick={alFunc}> Show Faults </li> 
          <li li className='side' >About</li>
          <li li className='side' onClick={ logOutFunction}>Sign out</li>
         </div>

@@ -22,7 +22,7 @@ const detailArray=[
 ]
 
 let  newarr= detailArray.find((one)=>one.type === type)
-console.log(newarr)
+
   return (
    <div className='helpdetail'>
    <p className='detailp'>{newarr.detail}</p>
