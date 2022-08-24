@@ -1,12 +1,48 @@
-.container {
-    display:flex;
-    flex-direction:column;
+.uppercontainer {
+    margin-top:10vh;
 }
 .footer{
     display:flex;
     justify-content: space-evenly;
-    margin-top: 80vh;
-    height:10vh;
+    height:7vh;
     background-color:midnightblue;
+    align-items: center;
+    color:white;
 
+}
+.bodycontainer{
+display:flex;
+justify-content: start;
+margin-left:20vw;
+
+}
+.lowercontainer{
+    display:flex;
+    justify-content: start;
+    margin-left:20vw;
+}
+.box{
+    
+    width:20vh;
+    height:20vh;
+    border-style:none;
+    border-color:white;
+    background-color:darkgrey;
+    border-radius: 5px;
+    margin-top:1.8px;
+    margin-left:5.8px;
+    transition: all .9s ;
+
+}
+.box:hover{
+    transform:scale(1.9)
+
+}
+.front{
+
+width:100vw;
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
 }

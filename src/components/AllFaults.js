@@ -5,8 +5,8 @@ import {getAllFaults} from '../api/index.js'
 import {useDispatch} from 'react-redux'
 import {action} from '../store/faults'
 import axios from 'axios'
-import { previousPagefunc,nextPagefunc } from '../api/index.js'
-const API= axios.create({baseURL: "http://localhost:5000"})
+
+const API= axios.create({baseURL:"https://ben-fault-recorder-2.herokuapp.com/" })
 API.interceptors.request.use((req)=>{
 const token= JSON.parse(localStorage.getItem('authToken')).token
 req.headers.authorization = `Bearer ${token}`

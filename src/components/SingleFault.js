@@ -28,20 +28,16 @@ event.target.classList.toggle('dontshow')
          all.map((aa)=>{
          return  <div className='all'>
            <div className='faultdiv'> 
-           <span className='tailnumber'>Tail Number:{aa.ac}  Station: {aa.station} </span> 
-            <span className='tailnumber'>  Date entered: dat3</span>
-             <p className='fault' >Fault Description {aa.fault}</p> 
-             <button onClick={aFunc} > show solution</button>
-             <div onClick={aFunc}  className= {mysolution ?'solutionclass':'dontshow'} >
-               <div className='partsused' onClick={aFunc}>
-                <li>solution {solvalue}</li>
-                <li className= {`${aa._id}`}>{aa.partname}</li>  
-                <div>{aa.partnumber}</div>  
-
-                </div>
-             </div>
-            
-          </div>
+           <div className='upperfault'> 
+           <div className='faulttailnumber' > Tail Number:  <span style={{fontSize:'calc(1.3vw)'}} >N{aa.ac}</span>  </div> 
+           <div className='faultstation'>Station: <span style={{fontSize:'calc(1.3vw)'}}  >{aa.station}</span> </div> 
+            <div className='dateentered'>  Date entered: <span style={{fontSize:'calc(1.0vw)'}} > 08/13/22</span> </div> 
+            </div>
+            <div className='faultdiscription' > 
+            <div className='innerfaultdiscription'><div>Fault Description- <span style={{fontSize:'calc(0.9vw)'}} >{aa.fault}</span></div> </div>
+            <button className='showsolutionbtn' onClick={aFunc} > show solution</button>
+            </div>
+            </div>
               <div className='deletecomponent'> <Delete id={aa._id}/>  </div>   
               </div>
                

@@ -49,8 +49,8 @@ dispatch(authAction.displayLogedinUser(name))
     }
     // user login and authentication form 
     const tFunc=async()=>{
-      const url= 'http://localhost:5000/home/userlogin'
-     // const url= "https://bini-ac-fault-recorder.herokuapp.com/home/userlogin"
+      const url= 'https://ben-fault-recorder-2.herokuapp.com/home/userlogin'
+    
       const userObj= {userOremail:emailOrusername,password:password,isEmail:isemail}
     const {data}= await axios.post(url,userObj)
       if(data.status==='ok'){
@@ -76,7 +76,8 @@ setPassword('')
   return (
     <div className='home'>
       <div className='uperhome'> 
-    <p className='p'> AIRCRAFT FAULT TRACKER  </p>
+   <div><p className='p'> AIRCRAFT FAULT TRACKER  </p></div> 
+   
     <form >
        <div className='username'>
   <input className='userinp' name='usernameOrEmail'   type="text" value={emailOrusername} onChange={aFunc} placeholder={"Username or Email"}/>

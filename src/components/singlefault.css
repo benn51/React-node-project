@@ -19,9 +19,8 @@
 
 
 .fault{
-   
     font-size:small;
-    align-self: start;
+    align-self: flex-end;
 }
 .deletecomponent{
    align-self:end;  
@@ -29,25 +28,58 @@
 
 .faultdiv{
 display:flex;
+flex-direction: column;
 justify-content:start;
 margin-left:1vw;
 width:50vw;
-flex-direction: column;
 margin-top:1vh;    
 }
-.tailnumber{
-    margin:0vw;
-    align-self:start;
-   
+.upperfault{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color:aqua;
+    height:calc(4vh);
+    margin-top:1vh;
+
 }
-.innerfault{
-   
+.dateentered{
+    align-self:end;
+    background-color:aqua;
+    font-size:calc(0.9vw);
+    padding-right:2vw;
 }
+
+
 .dontshow{
     display:none;
     height:2vh;
 }
-
-.solutionclass{
-   
+.faulttailnumber{
+   font-size:calc(1.1vw);
+ 
 }
+.faultdiscription{
+    align-self:start;
+    margin-top:1vh;
+    display:flex;
+    flex-direction:column;
+    align-items:start;
+}
+.faultstation{
+    font-size:calc(1.1vw)
+}
+.innerfaultdiscription{
+    height:7vh;
+    width:50vw;
+  
+   
+    margin-bottom: 1vh;
+}
+.showsolutionbtn{
+    height:calc(4vh);
+    width:10vw;
+}
+
+
+

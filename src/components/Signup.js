@@ -7,6 +7,12 @@ import { createNewuser} from '../api/index.js'
 import { useSelector,useDispatch } from 'react-redux'
 import {authAction} from '../store/faults'
 const Signup = () => {
+    const API= axios.create({baseURL:" https://ben-fault-recorder-2.herokuapp.com/" })   
+API.interceptors.request.use((req)=>{
+const token= JSON.parse(localStorage.getItem('authToken')).token
+req.headers.authorization = `Bearer ${token}`
+return req;
+})
     const dispatch= useDispatch()
     const navigate= useNavigate()
     const [name,setName]= useState('')
@@ -50,8 +56,8 @@ const Signup = () => {
     }
     //function to check if sign up form is filled properly and email is not registered already in the database
     const createNewuser= async ()=>{
-        const url="http://localhost:5000/home/newuser"
-        //const url= "https://bini-ac-fault-recorder.herokuapp.com/home/newuser"
+        const url="https://ben-fault-recorder-2.herokuapp.com/home/newuser"
+       
         if(check.namee && check.lastnamee && check.emaile &&  check.passworde ){
             setCheck({...check,auth:true})
             const newUser={name:name,lastname:lastname,email:email,username:username,password:password} 

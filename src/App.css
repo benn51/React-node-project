@@ -1,8 +1,8 @@
 
  .App{
-  
-   text-align: center;
-  
+  text-align: center;
+  background-image: url('../public/plane.jpeg');
+  background-size:cover;
  }
  
   .App-header {
@@ -36,9 +36,11 @@
     justify-content:end;
     align-items: center;
     cursor:pointer;
+
   }
+
   .li{
-    width:8vw;
+    padding-top:1vh;
     color: white;
     }
    
@@ -60,17 +62,18 @@
 
   .item{
   justify-content:flex-start; 
-   align-items: center;
+  align-items: center;
   border-radius:5px;
-  height:4vh;
- 
-  }
-  .helpdropdown{
+  height:5vh;
+  width:8vw;
+}
+
+.helpdropdown{
     display:flex;
     width:9vw;
     position:absolute;
     top:55px;
-    left:91vw;
+    left:90vw;
     height:40vh;
     margin-right:10vw;
     color: white;
@@ -88,20 +91,77 @@
     margin-top:-2px;
     padding-top:1vh;
   }
-  .uppermenu:hover {
-    background-color:blue;
-   
-  }
-  
-  .helpdropdown li{
+  .helplist{
     padding-left:0.5vw;
     padding-right:0.5vw;
-    background-color:midnightblue;
     height:4vh;
     width:6vw;
     color: white;
  
   }
-  .helpdropdown li:hover {
- background-color:blue;
+  
+  .uppernavcontainer{
+    display:flex;
+    
+  }
+  
+
+  .plus{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .downcaret{
+    size:medium;
+    color:white;
+    margin-right:5px;
+    margin-top:8px;
+  }
+  @media (min-width:900px){
+    .item:hover{
+      background-color:blue;
+    }
+    .helplist:hover {
+      background-color:blue;
+       }
+       .uppermenu:hover {
+        background-color:blue;
+       
+      }
+    }
+  @media (max-width:800px) {
+    .uppernavcontainer{
+     display:flex;
+     flex-direction:column;
+     align-items:start;
+     margin-top:1vh;
+    }
+    .showuser{
+      margin-right:20px;
+    }
+    .navbarcontainer{
+      height:20vw;
+      align-items:start;
+      justify-content:start;
+      
+    }
+  .item{
+    height:4vh;
+  }
+  .helpdropdown{
+    top:20px;
+    left:25vw;
+    width:15vw;
+  
+    }
+    .helplist{
+      height:1vh;
+      width:4vw;
+    
+    color:red;
+    
+    }
+    .li{
+      font-size:small;
+    }
   }

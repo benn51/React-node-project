@@ -1,8 +1,14 @@
 
+
 .home{
   margin-left:30vw;
-  margin-top:7vh;
+  margin-top:5px;
   width:40vw;
+  height:85vh;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
      
   }
   .username{
@@ -30,7 +36,7 @@
       border-style:hidden;
   }
  #googlebtn{
-     width:100vw; 
+    width:1ovw;
      height:8vh;
   }
   .btngoogle{
@@ -52,9 +58,10 @@
   .or{
       padding-top:3vh;
   }
+  
   .uperhome{
       background-color:beige;
-      height:60vh;
+      height:70vh;
    
   }
   .lowerhome{
@@ -67,4 +74,16 @@
       padding-top:1.6vh;
       font-size:small;
   }
-  
+  @media (max-width:800px) {
+    .uperhome{
+        background-color:blue;
+         margin-top:0px;
+         height:70vh;
+    }
+    .home{
+         width:60vw;
+        
+       
+           
+        }
+      }

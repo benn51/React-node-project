@@ -9,14 +9,7 @@ const showMenu=()=>{
   setMenu(!menu)
 }
 
- /* const helpArray=[
-    {id:1,about:`This app tracks all faults occuring on all planes belonging to the company and FMEs riding on 
-    the companies planes will enter the faults they encounter and also enter the solutions for their maintenance issues `},
-    {id:2,instruction:`to use the app you must first login using your google account or you can signup and starting using the app`},
-    {},
-    {},
-    {}
-  ]*/
+ 
   const showFunc=(e)=>{
 this.className='titson'
   console.log(this.className)

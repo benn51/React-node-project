@@ -37,6 +37,8 @@ console.log(e.target.value)
   setPartnumber(e.target.value)
   console.log(e.target.value)
    }
+   
+
   //function triggerd by the submit button
    const uFunc = (e)=>{
      e.preventDefault()
@@ -50,9 +52,12 @@ console.log(e.target.value)
      setPartnumber('')
    }
    const addFunc = async  ()=>{
-   // const url= "https://bini-ac-fault-recorder.herokuapp.com/home/new"
-   
-    const newItem={ac:ac,fault:fault,station:station,solution:solution,partname:partname,partnumber:partnumber}
+    const time= new Date()
+    const date= time.getDate()
+    const month = time.getMonth()
+    const year=time.getFullYear()
+    const fullTime= `${month}/${date}/${year}`
+   const newItem={ac:ac,fault:fault,station:station,solution:solution,partname:partname,partnumber:partnumber,timeFaultcreated:fullTime}
     const returnedFault= await createFault(newItem)
     setVart(returnedFault)
     dispatch(action.newFault(returnedFault))
@@ -97,5 +102,3 @@ console.log(e.target.value)
   )
  }
 export default Add
-/**eturn async (dispatch)=>{
-    await  axios.post(url,newItem) */

@@ -30,22 +30,28 @@ const showMenu=()=>{
 <div className="App" >
 
   <div className='navbarcontainer'> 
-  <div className={userisAuthenticated ?'showuser':'nologedinuser'}>  <Link style={{textDecoration:'none'}} to= {userisAuthenticated? '/signedin': '/home'}><p style={{color:'white'}}>  {currentUser} </p> </Link> </div>
-  <div className='item'> <Link style={{textDecoration:'none'}} to ='/'> <li  className='li'>Home</li></Link> </div>
-   <div className='item'><Link style={{textDecoration:'none'}} to   =  {userisAuthenticated? '/signedin': '/home'}  > <li  className='li'>Fault Tracker</li></Link></div>
+  <div className={userisAuthenticated ?'showuser':'nologedinuser'}> 
+   <Link style={{textDecoration:'none'}} to= {userisAuthenticated? '/signedin':'/home'}>
+    <p style={{color:'white'}}>  {currentUser} </p> </Link> </div>
+    <div className='uppernavcontainer'>
+   <div className='item'> <Link style={{textDecoration:'none'}} to ='/'> <li  className='li'>Home</li></Link> </div>
+   <div className='item'><Link style={{textDecoration:'none'}} to   =  {userisAuthenticated? '/signedin': '/home'}  > <li  className='li'>Tracker</li></Link></div>
    <div className='item'><Link style={{textDecoration:'none'}} to ='/about'> <li  className='li'>About</li></Link></div>
-   <div className='item'> <li  className='li' onClick={showMenu} > <FaAngleDown /> Help</li></div>
+   <div className='item plus' onClick={showMenu}> <FaAngleDown className='downcaret' /> <li  className='li' onClick={showMenu} >  Help</li></div>
+   
    <div className={menu?'helpdropdown':'noshowmenu'} onMouseLeave={()=>{setMenu(false)}}> 
-    <Link style={{textDecoration:'none'}} to={'/helpdetail/instruction'}><li className='uppermenu'> Instruction</li></Link>
-    <Link style={{textDecoration:'none'}} to ={'/helpdetail/enteredata'}> <li>Entering Data</li>  </Link>
-   <Link to={'helpdetail/getdata'}><li>Getting data</li>  </Link> 
-   <Link style={{textDecoration:'none'}} to={'/helpdetail/signup'}><li> Signup</li> </Link>
-   <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}><li>Contact</li></Link>
-   <li>Information</li>
-   <li>Adress</li>
-   <li>Direct line</li>
-   <li>More info</li>
+    <Link style={{textDecoration:'none'}} to={'/helpdetail/instruction'}><li className='uppermenu helplist'> Instruction</li></Link>
+    <Link style={{textDecoration:'none'}} to ={'/helpdetail/enteredata'}> <li className='helplist'> Inserting</li>  </Link>
+   <Link to={'helpdetail/getdata'}><li className='helplist'>Extracting</li>  </Link> 
+   <Link style={{textDecoration:'none'}} to={'/helpdetail/signup'}><li className='helplist'> Signup</li> </Link>
+   <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}><li className='helplist'>Contact</li></Link>
+
+   <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}><li className='helplist'>Adress</li></Link> 
+   <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}><li className='helplist'>Direct </li></Link>
+   <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}> <li className='helplist'>More</li></Link>
    </div>
+    </div>
+ 
   </div>
 
 <Routes>
@@ -67,12 +73,3 @@ const showMenu=()=>{
 }
 
 export default App;
-/** 
- * <div className={menu?'helpdropdown':'noshowmenu'}> 
-    <li className='uppermenu'> instruction</li> 
-    <Link to ={'/helpdetail/enteredata'}>  <li>entering data</li>  </Link>
-    <li>getting data</li>  
-   <li>getting data</li>
-   <li>getting data</li>
-   </div>
- */
