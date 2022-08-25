@@ -88,7 +88,6 @@ return (
     <div className='signup'>
         <div className='allsignup'>
             <form >  
-<div className='signuplower'>
 <div className='upper'><p className='p1'>Aircraft Fault Tracker</p>
      <p className='p2'> Sign Up To Track Aircraft Fault Records From All Stations </p>
         </div>
@@ -112,8 +111,6 @@ return (
     <button type='submit' className='signupbtn' onClick={eFunc}> Signup</button>
 </div>
 
-
-</div>
 
 </form>
         </div>

@@ -28,8 +28,7 @@ const showMenu=()=>{
     
     <BrowserRouter>
 <div className="App" >
-
-  <div className='navbarcontainer'> 
+<div className='navbarcontainer'> 
   <div className={userisAuthenticated ?'showuser':'nologedinuser'}> 
    <Link style={{textDecoration:'none'}} to= {userisAuthenticated? '/signedin':'/home'}>
     <p style={{color:'white'}}>  {currentUser} </p> </Link> </div>
@@ -37,18 +36,16 @@ const showMenu=()=>{
    <div className='item'> <Link style={{textDecoration:'none'}} to ='/'> <li  className='li'>Home</li></Link> </div>
    <div className='item'><Link style={{textDecoration:'none'}} to   =  {userisAuthenticated? '/signedin': '/home'}  > <li  className='li'>Tracker</li></Link></div>
    <div className='item'><Link style={{textDecoration:'none'}} to ='/about'> <li  className='li'>About</li></Link></div>
-   <div className='item plus' onClick={showMenu}> <FaAngleDown className='downcaret' /> <li  className='li' onClick={showMenu} >  Help</li></div>
-   
-   <div className={menu?'helpdropdown':'noshowmenu'} onMouseLeave={()=>{setMenu(false)}}> 
-    <Link style={{textDecoration:'none'}} to={'/helpdetail/instruction'}><li className='uppermenu helplist'> Instruction</li></Link>
-    <Link style={{textDecoration:'none'}} to ={'/helpdetail/enteredata'}> <li className='helplist'> Inserting</li>  </Link>
-   <Link to={'helpdetail/getdata'}><li className='helplist'>Extracting</li>  </Link> 
-   <Link style={{textDecoration:'none'}} to={'/helpdetail/signup'}><li className='helplist'> Signup</li> </Link>
-   <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}><li className='helplist'>Contact</li></Link>
-
-   <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}><li className='helplist'>Adress</li></Link> 
-   <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}><li className='helplist'>Direct </li></Link>
-   <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}> <li className='helplist'>More</li></Link>
+   <div className='item plus' onClick={showMenu}> <FaAngleDown className='downcaret' /> <li className='li' onClick={showMenu} >  Help</li></div>
+    <div className={menu?'helpdropdown':'noshowmenu'} onMouseLeave={()=>{setMenu(false)}}> 
+    <div className='helplist'> <Link style={{textDecoration:'none'}} to={'/helpdetail/instruction'}><li> Instruction</li></Link></div>
+   <div className='helplist'><Link style={{textDecoration:'none'}} to ={'/helpdetail/enteredata'}> <li> Inserting</li> </Link></div>
+   <div className='helplist'><Link style={{textDecoration:'none'}}  to={'helpdetail/getdata'}><li>Extracting</li> </Link> </div>
+   <div className='helplist'> <Link style={{textDecoration:'none'}} to={'/helpdetail/signup'}><li> Signup</li> </Link></div>
+   <div className='helplist'> <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}><li>Contact</li></Link></div>
+   <div className='helplist'> <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}><li >Adress</li></Link> </div>
+   <div className='helplist'> <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}><li>Direct </li></Link></div>
+   <div className='helplist'> <Link style={{textDecoration:'none'}} to={'/helpdetail/contact'}> <li> More</li></Link></div>
    </div>
     </div>
  
