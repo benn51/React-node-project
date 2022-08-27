@@ -5,6 +5,7 @@ import './App.css';
 import {BrowserRouter ,Routes, Route, Navigate} from 'react-router-dom'
 import {authAction} from './store/faults'
 import { useDispatch,useSelector } from 'react-redux';
+import {useNavigate} from 'react-router'
 import Signup from './components/Signup'
 import Home from './components/Home'
 import About from './components/About.js'
@@ -16,12 +17,16 @@ import Test from './components/Test'
 import Front from './components/Front'
 import SinglePlane from './components/SinglePlane';
 function App() {
+ 
   const userisAuthenticated= useSelector(state=>state.authentication.isauthenticated)
   const currentUser= useSelector(state=>state.authentication.username)
   const[menu,setMenu] =useState(false)
+  const dispatch= useDispatch()
+ 
 const showMenu=()=>{
   setMenu(!menu)
 }
+
 
   return (
     
@@ -33,10 +38,12 @@ const showMenu=()=>{
    <Link style={{textDecoration:'none'}} to= {userisAuthenticated? '/signedin':'/home'}>
     <p style={{color:'white'}}>  {currentUser} </p> </Link> </div>
     <div className='uppernavcontainer'>
-   <div className='item'> <Link style={{textDecoration:'none'}} to ='/'> <li  className='li'>Home</li></Link> </div>
+    <div className={ userisAuthenticated ?'item signout':'showsignout'} >  <li  className='li' >Sign out</li> </div>
+   <div className='item'> <Link style={{textDecoration:'none'}} to ='/home'> <li  className='li'>Home</li></Link> </div>
    <div className='item'><Link style={{textDecoration:'none'}} to   =  {userisAuthenticated? '/signedin': '/home'}  > <li  className='li'>Tracker</li></Link></div>
    <div className='item'><Link style={{textDecoration:'none'}} to ='/about'> <li  className='li'>About</li></Link></div>
    <div className='item plus' onClick={showMenu}> <FaAngleDown className='downcaret' /> <li className='li' onClick={showMenu} >  Help</li></div>
+ 
     <div className={menu?'helpdropdown':'noshowmenu'} onMouseLeave={()=>{setMenu(false)}}> 
     <div className='helplist'> <Link style={{textDecoration:'none'}} to={'/helpdetail/instruction'}><li> Instruction</li></Link></div>
    <div className='helplist'><Link style={{textDecoration:'none'}} to ={'/helpdetail/enteredata'}> <li> Inserting</li> </Link></div>
@@ -50,7 +57,7 @@ const showMenu=()=>{
     </div>
  
   </div>
-
+ 
 <Routes>
   <Route exact path='/' element= {<Front/>}/>
   <Route exact path='/home' element= { <Home/> } /> 

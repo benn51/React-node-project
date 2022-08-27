@@ -37,17 +37,15 @@ const Default = () => {
     }
       return (
         <div className="default" >
-         
-      <div className='defaultcontainer'>
+         <div className='defaultcontainer'>
         <div className='hdr'>
          <li className='side' onClick={adFunc}>Addd Fault</li>
          <li li className='side' onClick={showSinglePlaneFault}>Search By Tail Number</li>
          <li li className='side' onClick={alFunc}> Show Faults </li> 
-         <li li className='side' >About</li>
+         <li li className='side' > About</li>
          <li li className='side' onClick={ logOutFunction}>Sign out</li>
         </div>
-
-      <div className='allcomponents'> 
+    <div className='allcomponents'> 
      {!retal&&swap&&<Add/>}
     {retal&&<AllFaults/>}
     {!retal&& !swap&&<Home/>}

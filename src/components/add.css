@@ -1,5 +1,6 @@
+
 .ac{
- padding-top:5vh;
+ padding-top:2vh;
     
 }
 .fault{
@@ -7,35 +8,48 @@
   
 }
 .loweradd{
-    text-align: left;
-    margin-left:15vw;
+    text-align:start;
+    margin-left:10vw;
     padding-top: 5vh;
-    max-width:fit-content;
-
-
   }
 .station{
-  padding-top:1vh;
+  padding-top:2vh;
+  margin-left:2vw;
 }
 
 .acinp{
-   width:20vw;
-    height:4vh;
-   
+   width:15vw;
+    height:4vh; 
 }
 
 .stinp{
-   width:20vw;
+   width:15vw;
     height:4vh;
+}
+.atachapter{
+  width:4vw;
+  height:4vh;
+}
+.atadiv{
+margin-top:2vh;
+margin-left:5vw;
 }
 .flinp{
     padding-left:1vw;   
-    width:35vw;
+    width:50vw;
     height:10vh;
     border-radius: 5px;
-   
-}
-
+    resize: none;
+    border-style: none;
+   }
+   .shortfaultlinp{
+    width:50vw;
+    resize: none;
+    border-style: none;
+   }
+   .shortfault{
+     margin-top:1vh;
+   }
 .abtn{
     margin-right:35vw;
     margin-top:4vh;
@@ -62,7 +76,10 @@
     font-weight:bold;
     }
     .solution{
-      width:36vw;
+    width:50vw;
+    border-style: none;
+    resize: none;
+    padding-left:1vw;  
     }
     .replaceditems{
       display:flex;
@@ -79,4 +96,16 @@
     }
     .noshowpart{
       display:none;
+    }
+    .add{
+    
+    }
+    .shortinputs{
+      display:flex;
+    }
+    .solutions{
+      margin-top:1vh;
+    }
+    .addbtn{
+      margin-bottom: 2vh;
     }

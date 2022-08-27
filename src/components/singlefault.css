@@ -7,12 +7,12 @@
    justify-content:end;
     align-items:start;
    border-bottom-style: outset;
-   
+   margin-right:5vw;
 }
 .allfault{
     margin-top:5vh; 
     background-color:aliceblue;
-    width:60vw;
+    width:100vw;
     height:100%;
     
 }

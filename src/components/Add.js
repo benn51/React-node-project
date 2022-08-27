@@ -7,20 +7,29 @@ import axios from 'axios'
 import {createFault} from '../api/index.js'
  const Add = () => {
    const [ac,setAc]= useState('')
+   const[shortfault,setShortfault]= useState('')
    const [fault,setFault]= useState('')
+   const [ata,setAta] =useState('')
    const [station,setStation]= useState('')
    const [solution,setSolution]= useState('')
    const [showpart,setShowpart]= useState(false)
    const [partname,setPartname]=useState('')
    const [partnumber,setPartnumber]= useState('')
    const dispatch= useDispatch()
-   const[vart,setVart]= useState({ac:'',station:'',fault:'',solution:'',partname:'',partnumber:''})
+   const[vart,setVart]= useState({ac:'',station:'',fault:'',solution:'',partname:'',partnumber:'',shortfault:'',ata:''})
    //setting states from the inputs
    const aFunc=(e)=>{
      setAc(e.target.value)
    }
    const fFunc=(e)=>{
 setFault(e.target.value)
+   }
+   const shortfaultFunc=(e)=>{
+setShortfault(e.target.value)
+console.log(e.target.value)
+   }
+   const ataFunc=(e)=>{
+setAta(e.target.value)
    }
    const sFunc=(e)=>{
 setStation(e.target.value)
@@ -50,6 +59,8 @@ console.log(e.target.value)
      setSolution('')
      setPartname('')
      setPartnumber('')
+     setShortfault('')
+     setAta('')
    }
    const addFunc = async  ()=>{
     const time= new Date()
@@ -57,29 +68,35 @@ console.log(e.target.value)
     const month = time.getMonth()
     const year=time.getFullYear()
     const fullTime= `${month}/${date}/${year}`
-   const newItem={ac:ac,fault:fault,station:station,solution:solution,partname:partname,partnumber:partnumber,timeFaultcreated:fullTime}
+   const newItem={ac:ac,fault:fault,station:station,solution:solution,partname:partname,partnumber:partnumber,timeFaultcreated:fullTime,shortfault:shortfault,ata:ata}
     const returnedFault= await createFault(newItem)
     setVart(returnedFault)
     dispatch(action.newFault(returnedFault))
-  }  
+   }  
   return (
-    <div>
+    <div className='add'>
      <div className='loweradd'>
        <form > 
-     <div className='ac'>
-
-<input placeholder='aircraft tail number' onChange={aFunc} className='acinp' type="text" name="aircraft" value={ac}/>
+  <div className='shortinputs'>
+      <div className='ac'>
+       <input placeholder='aircraft tail number' onChange={aFunc} className='acinp' type="text" name="aircraft" value={ac}/>
 </div>
-
 <div className='station'>
- 
-  <input placeholder='fault station' onChange={sFunc} className='stinp' type="text" name='station' value={station}/>
+ <input placeholder='fault station' onChange={sFunc} className='stinp' type="text" name='station' value={station}/>
 </div>
+<div className='atadiv'> 
+<input placeholder='ATA' onChange={aFunc} className='atachapter' type="text" name="ata" value={ata}/>
+</div>
+  </div>
+  <div className='shortfault'>
+<textarea placeholder='short fault decription not more than 100 characters' onChange={ shortfaultFunc} className='shortfaultlinp' type="text" name="shortfault" maxLength={100} value={shortfault}></textarea>
+</div>
+
 <div className='fault'>
-<textarea placeholder='fault decription' onChange={fFunc} className='flinp' type="text" name="fault" maxLength={230} value={fault}></textarea>
+<textarea placeholder='brief fault decription not more than 300 letters' onChange={fFunc} className='flinp' type="text" name="fault" maxLength={230} value={fault}></textarea>
 </div>
 <div className='solutions'>
-  <textarea name="remedies" id="" cols="30" rows="10" value={solution} onChange={solutionFunc} className='solution'></textarea>
+  <textarea placeholder='actions taken to fix problem ' name="remedies" id="" cols="30" rows="10" value={solution} onChange={solutionFunc} className='solution'></textarea>
 </div>
 <div className='checkbox' style={{marginTop:'1vh',marginBottom:'1vh'}} onChange={()=>{ setShowpart(!showpart) }}>
   <label htmlFor="part movement" style={{fontSize:'smaller'}}>Have you replaced part</label>
@@ -91,8 +108,8 @@ console.log(e.target.value)
   <input type="text" name="partnumber" className='replacedpartnumber' placeholder='enter part number' value={partnumber} onChange={partnumberFunc} />
 </div>
 </div>
+<div className='addbtn'><button onClick={uFunc} className='abtn' type='submit'>Add Fault</button></div>
 
-<button onClick={uFunc} className='abtn' type='submit'>Add Fault</button>
 </form>
  </div>
  <div className={vart.ac?'showDisc':'noshow'}> 

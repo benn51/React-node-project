@@ -112,6 +112,12 @@
    
   
   }
+  .signout{
+   }
+   
+  .showsignout{
+    display:none;
+  }
   .downcaret{
     size:medium;
     color:white;

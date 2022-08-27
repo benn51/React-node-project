@@ -13,7 +13,7 @@
     flex-direction: column;
     align-items: center;
     width:35vw;
-    height:85vh;
+   
     background-color:beige;
     height:70vh;
     margin-top:1vh;
@@ -43,37 +43,32 @@
      padding-left: 1vw;
   }
   .userinp{
-      width:30vw;
+      width:25vw;
       height:4vh;
       border-radius: 5px;
       border-style: none;
   }
   .passinp{
-      width:30vw;
+      width:25vw;
       height:4vh;
       border-radius: 5px;
       border-style:hidden;
   }
  #googlebtn{
-   
-     height:8vh;
-    
-  }
-  .btngoogle{
+      height:5vh;
       display:flex;
       justify-content:center;
-      margin-left:8vw;
-      margin-top:4vh;
-     
-    margin-left:3vw;
-    width:4vw;
+     margin-top:4vh;
+     width:18vw;
+     background-color: blue;
   }
+
   .manualbtndiv{
-       margin-top:3vh;
-      margin-left:0.5vw;
+    margin-top:5vh;
+    margin-left:0.5vw;
   }
   .manualbtn{
-      width:25vw;
+      width:20vw;
       height:5vh;
       border-radius:6px;  
       border-style: none;
@@ -90,20 +85,30 @@
       font-size:small;
   }
   @media (max-width:800px) {
+      .home{
+          height:85vh;
+      }
     .uperhome{
-       
-         margin-top:0px;
-         height:70vh;
-         width:55vw;
+    margin-top:0px;
+    height:65vh;
+    width:55vw;
+   
     }
    .lowerhome{
 width:55vw;
 margin-top:1vh;
    }
    .passinp{
-       width:50vw;
+       width:40vw;
    }
    .userinp{
-       width:50vw;
+       width:40vw;
    }
+   .manualbtn{
+    width:30vw;
+   }
+   .or{
+   display:none;
+}
+
       }

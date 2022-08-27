@@ -30,10 +30,9 @@ useEffect(()=>{
 const decodedGoogleToken= jwtDecode(googleToken)
 const name= decodedGoogleToken.name
 dispatch(authAction.displayLogedinUser(name))
-     
-         localStorage.setItem('authToken',JSON.stringify({token:googleToken}))
-         navigate('/signedin')
-        dispatch( authAction.authenticateUser(true))  // to protect the athenticated  route from acessed from the url
+  localStorage.setItem('authToken',JSON.stringify({token:googleToken}))
+navigate('/')
+dispatch( authAction.authenticateUser(true))  // to protect the athenticated  route from acessed from the url
     }
     const aFunc=(e)=>{
       const emailcheck=e.currentTarget.value
@@ -49,7 +48,8 @@ dispatch(authAction.displayLogedinUser(name))
     }
     // user login and authentication form 
     const tFunc=async()=>{
-      const url= 'https://ben-fault-recorder-2.herokuapp.com/home/userlogin'
+      // 'https://ben-fault-recorder-2.herokuapp.com/home/userlogin'
+      const url= 'http://localhost:500/'   
     
       const userObj= {userOremail:emailOrusername,password:password,isEmail:isemail}
     const {data}= await axios.post(url,userObj)
@@ -86,18 +86,15 @@ setPassword('')
 <input className='passinp' type="password" name='password' onChange={bFunc} value={password} placeholder={"password"}/>
 </div>
 
-<div className='manualbtndiv'>
+<div  className='manualbtndiv'>
  <button type='submit' className='manualbtn' onClick={cFunc}> Log In</button> 
 </div>
     </form>
    
 <div className='or'>------------------or ------------------    </div>
 
-
-<div className='btngoogle'>
 <div id='googlebtn'></div>
-   </div>
-   </div>
+ </div>
 
    <div className='lowerhome'>
      <p className='plower'>Don't have an account ?  <Link to={'/Signup'}>Sign up</Link> </p>

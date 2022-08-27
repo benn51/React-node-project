@@ -6,6 +6,7 @@ import './signup.css'
 import { createNewuser} from '../api/index.js'
 import { useSelector,useDispatch } from 'react-redux'
 import {authAction} from '../store/faults'
+import { FaWindows } from 'react-icons/fa'
 const Signup = () => {
     const API= axios.create({baseURL:" https://ben-fault-recorder-2.herokuapp.com/" })   
 API.interceptors.request.use((req)=>{
@@ -56,18 +57,20 @@ return req;
     }
     //function to check if sign up form is filled properly and email is not registered already in the database
     const createNewuser= async ()=>{
-        const url="https://ben-fault-recorder-2.herokuapp.com/home/newuser"
-       
+        //const url="https://ben-fault-recorder-2.herokuapp.com/home/newuser"
+       const url='http://localhost:5000'
         if(check.namee && check.lastnamee && check.emaile &&  check.passworde ){
             setCheck({...check,auth:true})
             const newUser={name:name,lastname:lastname,email:email,username:username,password:password} 
             const {data} = await axios.post(url,newUser)
        if(data.msg==='error'){
            console.log('user already exists ')
+           window.alert('user already exists')
           }
        else{
         navigate('/home')
            console.log('user registerded sucessfully')
+           window.alert('user registered succesfully')
           }
      }
      else{
