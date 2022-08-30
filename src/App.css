@@ -58,6 +58,9 @@
    width:15vw;
    height:6vh;
    margin-right:45vw;
+   background-color:brown;
+   border-radius:5px;
+  
   }
 
   .item{
@@ -147,6 +150,8 @@
     }
     .showuser{
       margin-right:20px;
+      font-size:smaller;
+      margin-bottom:40px;
     }
     .navbarcontainer{
       height:20vw;

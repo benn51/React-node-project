@@ -1,29 +1,45 @@
+.Singleplane{
+    width:100vw;
+    height:90vh;
+}
+
+.uppercontainer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color:aqua;
+    justify-content:start;
+    margin-top:2vh;
+  
+}
 .formcontainer{
     display:flex;
-   justify-content:flex-start;
-   margin-top:8vh;
+   justify-content:center;
+  background-color:yellow;
+   width:75vw;
+   margin-top:1vh;
 }
-.formlabel{
-    margin-left:10vw;
-    padding-top:1vh;
-}
-.forminput{
-    margin-left:3vw;
-    height:4vh;
-    width:20vw;
-}
+
+
 
 .formbutton{
      width:15vw;
     background-color:coral;
-    margin-left:4vw;
     height:5vh;
+    margin-left:2vw;
+}
+.finput{
+    height:4vh;
+    width:15vw;
+}
+.tailnumber{
+    margin-right:2vw;
+}
+.detailcontent{
+    background-color:whitesmoke;
+    height:80vh;
+    width:85vw;
+    margin-top:5vh;
 }
 
 
-.noshowdescription {
-display: none;
-}
-taildiv{
-    position:fixed;
-}

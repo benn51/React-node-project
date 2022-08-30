@@ -16,14 +16,14 @@ import Registered from './components/Registered'
 import Test from './components/Test'
 import Front from './components/Front'
 import SinglePlane from './components/SinglePlane';
+import One from './components/One'
 function App() {
  
   const userisAuthenticated= useSelector(state=>state.authentication.isauthenticated)
   const currentUser= useSelector(state=>state.authentication.username)
   const[menu,setMenu] =useState(false)
   const dispatch= useDispatch()
- 
-const showMenu=()=>{
+ const showMenu=()=>{
   setMenu(!menu)
 }
 
@@ -38,7 +38,7 @@ const showMenu=()=>{
    <Link style={{textDecoration:'none'}} to= {userisAuthenticated? '/signedin':'/home'}>
     <p style={{color:'white'}}>  {currentUser} </p> </Link> </div>
     <div className='uppernavcontainer'>
-    <div className={ userisAuthenticated ?'item signout':'showsignout'} >  <li  className='li' >Sign out</li> </div>
+    
    <div className='item'> <Link style={{textDecoration:'none'}} to ='/home'> <li  className='li'>Home</li></Link> </div>
    <div className='item'><Link style={{textDecoration:'none'}} to   =  {userisAuthenticated? '/signedin': '/home'}  > <li  className='li'>Tracker</li></Link></div>
    <div className='item'><Link style={{textDecoration:'none'}} to ='/about'> <li  className='li'>About</li></Link></div>
@@ -67,6 +67,7 @@ const showMenu=()=>{
   <Route exact path='/help' element={<Help/>}/>
   <Route exact path='/helpdetail/:type' element={<Helpdetail/>}/>
   <Route exact path='/about' element={<About/>}/>
+  <Route exact path='/onedetail/:id' element={<One/>}/>
 
 </Routes>
 </div>

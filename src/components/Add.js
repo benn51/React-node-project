@@ -3,7 +3,6 @@ import './add.css'
 import {useState} from 'react'
 import {action} from '../store/faults'
 import {useDispatch} from 'react-redux'
-import axios from 'axios'
 import {createFault} from '../api/index.js'
  const Add = () => {
    const [ac,setAc]= useState('')
@@ -26,7 +25,7 @@ setFault(e.target.value)
    }
    const shortfaultFunc=(e)=>{
 setShortfault(e.target.value)
-console.log(e.target.value)
+
    }
    const ataFunc=(e)=>{
 setAta(e.target.value)
@@ -36,15 +35,15 @@ setStation(e.target.value)
    }
  const solutionFunc=(e)=>{
   setSolution(e.target.value)
-  console.log(e.target.value)
+ 
  }
  const partnameFunc=(e)=>{
 setPartname(e.target.value)
-console.log(e.target.value)
+
  }
  const partnumberFunc=(e)=>{
   setPartnumber(e.target.value)
-  console.log(e.target.value)
+ 
    }
    
 
@@ -85,15 +84,15 @@ console.log(e.target.value)
  <input placeholder='fault station' onChange={sFunc} className='stinp' type="text" name='station' value={station}/>
 </div>
 <div className='atadiv'> 
-<input placeholder='ATA' onChange={aFunc} className='atachapter' type="text" name="ata" value={ata}/>
+<input placeholder='ata' onChange={ataFunc} className='atachapter' type="text" name="ata" value={ata}/>
 </div>
   </div>
   <div className='shortfault'>
-<textarea placeholder='short fault decription not more than 100 characters' onChange={ shortfaultFunc} className='shortfaultlinp' type="text" name="shortfault" maxLength={100} value={shortfault}></textarea>
+<textarea placeholder='short fault title not more than 100 characters' onChange={ shortfaultFunc} className='shortfaultlinp' type="text" name="shortfault" maxLength={100} value={shortfault}></textarea>
 </div>
 
 <div className='fault'>
-<textarea placeholder='brief fault decription not more than 300 letters' onChange={fFunc} className='flinp' type="text" name="fault" maxLength={230} value={fault}></textarea>
+<textarea placeholder='brief fault decription not more than 200 letters' onChange={fFunc} className='flinp' type="text" name="fault" maxLength={200} value={fault}></textarea>
 </div>
 <div className='solutions'>
   <textarea placeholder='actions taken to fix problem ' name="remedies" id="" cols="30" rows="10" value={solution} onChange={solutionFunc} className='solution'></textarea>

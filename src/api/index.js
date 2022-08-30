@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {action,authAction} from '../store/faults'
 import  {useDispatch}  from 'react-redux'
-const API= axios.create({baseURL:" http://localhost:5000/" })    //https://ben-fault-recorder-2.herokuapp.com/
+const API= axios.create({baseURL:"https://ben-fault-recorder-2.herokuapp.com/"})    //" http://localhost:5000/"
 API.interceptors.request.use((req)=>{
 const token= JSON.parse(localStorage.getItem('authToken')).token
 req.headers.authorization = `Bearer ${token}`
@@ -45,7 +45,7 @@ export const singleFault = async (obj)=>{
 }
 //function tocreate new user
   export const createNewuser= async (user)=>{
-    // const url = 'http://localhost:5000/home/newuser'
+   
     const url="https://ben-fault-recorder-2.herokuapp.com/home/newuser"
    const {data} = await axios.post(url,user)
  }
@@ -57,6 +57,15 @@ export const singleFault = async (obj)=>{
    }
  
  }
+ //function to return one item for displaying fault and solution
+ export const faultsolutionFunc= (id)=>{
+return async (dispatch)=>{
+ await API.get(`home/${id}`)
+dispatch(action.deletSingleFault(id)) 
+}}
+
+
+
  /*export const nextPagefunc=()=>{
   return async (dispatch)=>{
   const {data} = await API.get(`home/in?page=10 type=dec`)
@@ -66,7 +75,7 @@ export const singleFault = async (obj)=>{
 
  }*/
  export const nextPagefunc = async ()=>{
-  const {data} = await API.get(`home/in?page= 4 type=dec`)
+  const {data} = await API.get(`home/in?page=4 type=dec`)
 return data
 
 }

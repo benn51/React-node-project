@@ -29,9 +29,11 @@
 .atachapter{
   width:4vw;
   height:4vh;
+  margin-top:2vh;
+  
 }
 .atadiv{
-margin-top:2vh;
+
 margin-left:5vw;
 }
 .flinp{
@@ -97,9 +99,7 @@ margin-left:5vw;
     .noshowpart{
       display:none;
     }
-    .add{
     
-    }
     .shortinputs{
       display:flex;
     }

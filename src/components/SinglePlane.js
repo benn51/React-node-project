@@ -24,46 +24,32 @@ const SinglePlane = () => {
     setEnteredtailNumber('')
     setShow(false) // to change fault discription display off initially 
   }
-  const toggleDiscription=()=>{
-    setShow(!show)
-    setFaultarray(faults)
-   console.log(faultarray)
-  }
+
   const backFunction =()=>{
-    navigate('/signedin')
+    navigate(-1)
   }
   return (
-    <div className='container'>
-      <div>
+  <div className='Singleplane'>
+       <div className='uppercontainer'>
+             <div className='formcontainer'>
+              <form>
+                 <label htmlFor="tailnumber" className='formlabel'> Tail Number:  </label>   
+                 <input className='finput' type="text" name='tailnumber' placeholder='enter tail number only' onChange={aFunc} value={enteredtailNumber}/>
+                  <button className='formbutton' onClick={submitHandler} > Serach </button>
+              </form> 
+            </div>
+  
+   <div className='detailcontent'>
+     content
+   </div>
+        
+
+         <div>
         <button onClick={backFunction}   className='upperbutton'> back</button>
-      </div>
-<form>
-<div className='formcontainer'>
- <label htmlFor="tailnumber" className='formlabel'> Tail Number</label>   
-<input className='forminput'   type="text" name='tailnumber' placeholder='enter tail number only' onChange={aFunc} value={enteredtailNumber}/>
-<div>
-  <button className='formbutton' onClick={submitHandler} > Serach </button>
-</div>
-</div>
-</form>
-<div  onClick={toggleDiscription} className='taildiv'> hi  </div>
-{
-  faults.map((fault)=>{
-         return (
-      <div>
-       <div className={show? `showDiscription`:'noshowdescription'} >{fault.fault}</div>
-       
+         </div>
     </div>
-         )
-  }  
-   
-  )
+</div>
 
-}  
-    </div>
-  )
-
-}
+  )}
 
 export default SinglePlane
-///<div  onClick={toggleDiscription} className='taildiv'> <p > {faults[0].ac} </p>   </div>

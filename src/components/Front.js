@@ -7,7 +7,7 @@ const Front = () => {
   
            <div className='uppercontainer'>
           <div className='bodycontainer'>
-          <div className='box one'> Welcome to Binyam tafesse page</div>
+        
           <div className='box two'> now it is 11.30 central</div>
           <div className='box three'>item 3</div>
           </div>

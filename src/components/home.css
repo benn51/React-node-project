@@ -55,12 +55,11 @@
       border-style:hidden;
   }
  #googlebtn{
-      height:5vh;
+     
       display:flex;
       justify-content:center;
      margin-top:4vh;
-     width:18vw;
-     background-color: blue;
+    
   }
 
   .manualbtndiv{

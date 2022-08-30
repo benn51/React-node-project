@@ -21,7 +21,7 @@ useEffect(()=>{
     callback: handleCallbackResponse 
   })
   google.accounts.id.renderButton(document.getElementById('googlebtn'),{
-    theme: "outline", size: "large"
+    theme: "filled_blue", size: "medium", width: "200.043",logo_alignment: "left",shape: "rectangular"
   } )
 },[]) 
 // google login handler function
@@ -48,8 +48,8 @@ dispatch( authAction.authenticateUser(true))  // to protect the athenticated  ro
     }
     // user login and authentication form 
     const tFunc=async()=>{
-      // 'https://ben-fault-recorder-2.herokuapp.com/home/userlogin'
-      const url= 'http://localhost:500/'   
+        //'http://localhost:500/' 
+      const url= 'https://ben-fault-recorder-2.herokuapp.com/home/userlogin'   
     
       const userObj= {userOremail:emailOrusername,password:password,isEmail:isemail}
     const {data}= await axios.post(url,userObj)

@@ -57,8 +57,8 @@ return req;
     }
     //function to check if sign up form is filled properly and email is not registered already in the database
     const createNewuser= async ()=>{
-        //const url="https://ben-fault-recorder-2.herokuapp.com/home/newuser"
-       const url='http://localhost:5000'
+        //const url='http://localhost:5000/home/newuser'
+       const url= "https://ben-fault-recorder-2.herokuapp.com/home/newuser"
         if(check.namee && check.lastnamee && check.emaile &&  check.passworde ){
             setCheck({...check,auth:true})
             const newUser={name:name,lastname:lastname,email:email,username:username,password:password} 
