@@ -33,7 +33,7 @@ dispatch(authAction.displayLogedinUser(name))
   localStorage.setItem('authToken',JSON.stringify({token:googleToken}))
   localStorage.setItem('loggedinuser',JSON.stringify({iname:name}))
   localStorage.setItem('authenticateuser',JSON.stringify(true))
-navigate('/')
+  navigate('/')
 dispatch( authAction.authenticateUser(true))  // to protect the athenticated  route from acessed from the url
     }
     const aFunc=(e)=>{
@@ -61,7 +61,7 @@ dispatch( authAction.authenticateUser(true))  // to protect the athenticated  ro
         const name= user[0].name
         const fname =name +' ' +lname
         dispatch(authAction.displayLogedinUser(fname))
-        navigate('/signedin')
+        navigate('/')
         localStorage.setItem('loggedinuser',JSON.stringify({iname:name}))
          localStorage.setItem('authToken',JSON.stringify({token:data.acessToken}))
         dispatch( authAction.authenticateUser(true))  //// to protect the athenticated route from getting acessed from the url

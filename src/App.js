@@ -56,8 +56,9 @@ const navigate= useNavigate()
    
     <div className='uppernavcontainer'>
     {userisAuthenticated&&<div className='signout'> <li  className='li' onClick={logOutFunction}>Signout</li></div>}
-    <div className='item'> <Link style={{textDecoration:'none'}} to ='/home'> <li  className='li'>Home</li></Link> </div>
-   <div className='item'><Link style={{textDecoration:'none'}} to   =  {userisAuthenticated? '/signedin': '/home'}  > <li  className='li'>Tracker</li></Link></div>
+    <div className='item'> <Link style={{textDecoration:'none'}} to ='/'> <li  className='li'>Home</li></Link> </div>
+   {!userisAuthenticated&& <div className='item'> <Link style={{textDecoration:'none'}} to ='/home'> <li  className='li'>Login</li></Link> </div>}
+   {userisAuthenticated&&<div className='item'><Link style={{textDecoration:'none'}} to   =  {userisAuthenticated? '/signedin': '/home'}  > <li  className='li'>Tracker</li></Link></div>}
    <div className='item'><Link style={{textDecoration:'none'}} to ='/about'> <li  className='li'>About</li></Link></div>
    <div className=' plus' onClick={showMenu}> <FaAngleDown className='downcaret' /> <li className='li' onClick={showMenu} > Help</li></div>
  

@@ -58,10 +58,10 @@
     display:flex;
     justify-content:center; 
     align-items: center;
-   width:10vw;
+   width:9vw;
    height:6vh;
-   margin-right:50vw;
-   background-color:brown;
+   margin-right:55vw;
+  
    border-radius:5px;
   
   }
@@ -124,7 +124,7 @@
    align-items: center;
    border-radius:5px;
    height:5vh;
-   width:6vw;
+   width:5vw;
    margin-right: 2vw;
   }
 
@@ -163,6 +163,9 @@
       .signout{
         background-color:blue;
       }
+      .showuser{
+        background-color:brown;
+      }
     }
   
   @media (max-width:800px) {
@@ -171,9 +174,9 @@
      margin-top:1vh;
     }
     .showuser{
-      margin-right:20px;
+      margin-right:15vw;
       font-size:smaller;
-      margin-bottom:10px;
+      
     }
     .navbarcontainer{
       height:20vw;
@@ -213,4 +216,5 @@
     .li{
       font-size:medium;
     }
+ 
   }
