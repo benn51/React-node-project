@@ -31,6 +31,8 @@ const decodedGoogleToken= jwtDecode(googleToken)
 const name= decodedGoogleToken.name
 dispatch(authAction.displayLogedinUser(name))
   localStorage.setItem('authToken',JSON.stringify({token:googleToken}))
+  localStorage.setItem('loggedinuser',JSON.stringify({iname:name}))
+  localStorage.setItem('authenticateuser',JSON.stringify(true))
 navigate('/')
 dispatch( authAction.authenticateUser(true))  // to protect the athenticated  route from acessed from the url
     }
@@ -46,10 +48,10 @@ dispatch( authAction.authenticateUser(true))  // to protect the athenticated  ro
      setPassword(e.currentTarget.value)
     
     }
-    // user login and authentication form 
+    // user login and authentication form using created account 
     const tFunc=async()=>{
         //'http://localhost:500/' 
-      const url= 'https://ben-fault-recorder-2.herokuapp.com/home/userlogin'   
+      const url= 'https://biniapp-3.herokuapp.com/home/userlogin'   
     
       const userObj= {userOremail:emailOrusername,password:password,isEmail:isemail}
     const {data}= await axios.post(url,userObj)
@@ -60,6 +62,7 @@ dispatch( authAction.authenticateUser(true))  // to protect the athenticated  ro
         const fname =name +' ' +lname
         dispatch(authAction.displayLogedinUser(fname))
         navigate('/signedin')
+        localStorage.setItem('loggedinuser',JSON.stringify({iname:name}))
          localStorage.setItem('authToken',JSON.stringify({token:data.acessToken}))
         dispatch( authAction.authenticateUser(true))  //// to protect the athenticated route from getting acessed from the url
     }

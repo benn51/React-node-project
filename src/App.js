@@ -1,8 +1,7 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import Default from './components/Default'
-import {Link} from 'react-router-dom';
 import './App.css';
-import {BrowserRouter ,Routes, Route, Navigate} from 'react-router-dom'
+import {Routes, Route, Navigate,Link} from 'react-router-dom'
 import {authAction} from './store/faults'
 import { useDispatch,useSelector } from 'react-redux';
 import {useNavigate} from 'react-router'
@@ -12,14 +11,31 @@ import About from './components/About.js'
 import Help from './components/Help.js'
 import Helpdetail from './components/Helpdetail'
 import {FaAngleDown} from 'react-icons/fa'
-import Registered from './components/Registered'
 import Test from './components/Test'
 import Front from './components/Front'
 import SinglePlane from './components/SinglePlane';
 import One from './components/One'
 function App() {
  
-  const userisAuthenticated= useSelector(state=>state.authentication.isauthenticated)
+const navigate= useNavigate()
+  useEffect( ()=>{
+ const auth=localStorage.getItem('authToken')
+
+   if(auth){
+    const  name = JSON.parse(localStorage.getItem('loggedinuser')).iname
+      dispatch( authAction.authenticateUser(true))
+      dispatch(authAction.displayLogedinUser(name))   
+      console.log(currentUser)
+     navigate('/signedin')
+   }
+    },[])
+    const logOutFunction= ()=>{
+      localStorage.clear();
+      dispatch(authAction.logOutuser())
+      navigate('/home')
+    }
+ 
+  const userisAuthenticated = useSelector(state=>state.authentication.isauthenticated)
   const currentUser= useSelector(state=>state.authentication.username)
   const[menu,setMenu] =useState(false)
   const dispatch= useDispatch()
@@ -31,18 +47,19 @@ function App() {
   return (
     
     
-    <BrowserRouter>
+    
 <div className="App" >
 <div className='navbarcontainer'> 
-  <div className={userisAuthenticated ?'showuser':'nologedinuser'}> 
-   <Link style={{textDecoration:'none'}} to= {userisAuthenticated? '/signedin':'/home'}>
-    <p style={{color:'white'}}>  {currentUser} </p> </Link> </div>
+  { userisAuthenticated&&<div className='showuser'>
+     <Link style={{textDecoration:'none'}} to= {userisAuthenticated? '/signedin':'/home'}><span style={{color:'white'}}>  {currentUser} </span> </Link> 
+    </div>}
+   
     <div className='uppernavcontainer'>
-    
-   <div className='item'> <Link style={{textDecoration:'none'}} to ='/home'> <li  className='li'>Home</li></Link> </div>
+    {userisAuthenticated&&<div className='signout'> <li  className='li' onClick={logOutFunction}>Signout</li></div>}
+    <div className='item'> <Link style={{textDecoration:'none'}} to ='/home'> <li  className='li'>Home</li></Link> </div>
    <div className='item'><Link style={{textDecoration:'none'}} to   =  {userisAuthenticated? '/signedin': '/home'}  > <li  className='li'>Tracker</li></Link></div>
    <div className='item'><Link style={{textDecoration:'none'}} to ='/about'> <li  className='li'>About</li></Link></div>
-   <div className='item plus' onClick={showMenu}> <FaAngleDown className='downcaret' /> <li className='li' onClick={showMenu} >  Help</li></div>
+   <div className=' plus' onClick={showMenu}> <FaAngleDown className='downcaret' /> <li className='li' onClick={showMenu} > Help</li></div>
  
     <div className={menu?'helpdropdown':'noshowmenu'} onMouseLeave={()=>{setMenu(false)}}> 
     <div className='helplist'> <Link style={{textDecoration:'none'}} to={'/helpdetail/instruction'}><li> Instruction</li></Link></div>
@@ -71,7 +88,7 @@ function App() {
 
 </Routes>
 </div>
-    </BrowserRouter>
+  
 
     
   )

@@ -40,7 +40,7 @@
   }
 
   .li{
-    padding-top:1vh;
+   
     color: white;
     }
    
@@ -55,21 +55,24 @@
     display:none;
   }
   .showuser{
-   width:15vw;
+    display:flex;
+    justify-content:center; 
+    align-items: center;
+   width:10vw;
    height:6vh;
-   margin-right:45vw;
+   margin-right:50vw;
    background-color:brown;
    border-radius:5px;
   
   }
 
   .item{
-   
-  justify-content:flex-start; 
+    display: flex;
+   justify-content:center; 
   align-items: center;
   border-radius:5px;
   height:5vh;
-  width:8vw;
+  width:6vw;
 }
 
 .helpdropdown{
@@ -106,29 +109,42 @@
     margin-right:2vw;
     
   }
-  
-
-  .plus{
+   .plus{
     display:flex;
     align-items:center;
     justify-content:center;
-   
-  
+    border-radius:5px;
+  height:5vh;
+  width:6vw;
+ 
   }
   .signout{
-   }
-   
-  .showsignout{
-    display:none;
+    display: flex;
+    justify-content:center; 
+   align-items: center;
+   border-radius:5px;
+   height:5vh;
+   width:6vw;
+   margin-right: 2vw;
   }
+
   .downcaret{
     size:medium;
     color:white;
     margin-right:5px;
-    margin-top:8px;
+    margin-top:4px;
   }
   .helplist li{
     color:white;
+  }
+  .logedinuser{
+    display: flex;
+    justify-content:center; 
+   align-items: center;
+   border-radius:5px;
+   height:5vh;
+   width:6vw;
+
   }
   @media (min-width:900px){
     .item:hover{
@@ -141,6 +157,12 @@
         background-color:blue;
        
       }
+      .plus:hover{
+        background-color:blue;
+      }
+      .signout{
+        background-color:blue;
+      }
     }
   
   @media (max-width:800px) {
@@ -151,7 +173,7 @@
     .showuser{
       margin-right:20px;
       font-size:smaller;
-      margin-bottom:40px;
+      margin-bottom:10px;
     }
     .navbarcontainer{
       height:20vw;
@@ -164,6 +186,12 @@
     height:4vh;
     width:15vw;
     margin-left:15px;
+  }
+
+  .logedinuser{
+    height:4vh;
+    width:15vw;
+    
   }
   .helpdropdown{
     top:9vh;

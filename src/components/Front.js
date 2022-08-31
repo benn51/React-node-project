@@ -20,11 +20,14 @@ const Front = () => {
           
           
           </div>
-        
-          <div className='footer'>
+          <div className='footercontainer'>
+  <div className='footer'>
               <div className='leftfooter'> < FaLinkedin size="2.5vw"/> </div>
               <div className='rightfooter'> Binyam Tafesse@copyrigh</div>
       </div>
+          </div>
+        
+        
 
     
      </div>

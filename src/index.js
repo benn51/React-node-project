@@ -1,5 +1,5 @@
 
-
+import  {BrowserRouter} from 'react-router-dom'
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css'
@@ -15,7 +15,10 @@ root.render(
   <Provider store={store}> 
     <React.StrictMode>
        <GoogleOAuthProvider clientId={"166059900103-ms2q3t8ppn752v8371abhn3s2ahmmf6r.apps.googleusercontent.com"} > 
-      <App />
+       <BrowserRouter> 
+       <App />
+       </BrowserRouter>
+     
       </GoogleOAuthProvider >
     </React.StrictMode>
     </Provider >
