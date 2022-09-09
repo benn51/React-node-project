@@ -51,7 +51,7 @@ const gFunc=()=>{
             <div className='dateentered'>  Date entered:   <span style={{fontSize:'calc(1.1vw)'}}> {aa.timeFaultcreated}</span>  </div> 
             <div className='deletecomponent'> <Delete id={aa._id}/>  </div>  
           </div>
-         <div className='shortfaultdiv '>Title-   <Link to ={`/onedetail/${aa._id}`}> <article style={{fontSize:'calc(0.9vw)', wordWrap: 'break-word',marginRight:'auto' }} >{aa.shortfault}</article></Link>  </div>
+         <div className='shortfaultdiv '>Title-<Link to ={`/onedetail/${aa._id}`}> <article style={{fontSize:'calc(0.9vw)', wordWrap: 'break-word',marginRight:'auto' }} >{aa.shortfault}</article></Link>  </div>
         </div>
       </div>
              

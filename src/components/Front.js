@@ -1,37 +1,56 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './front.css'
+import {Link} from 'react-router-dom'
+import {FaBars} from 'react-icons/fa'
 import { FaLinkedin } from 'react-icons/fa'
 const Front = () => {
-  return (
-    <div className='front'>
-  
-           <div className='uppercontainer'>
-          <div className='bodycontainer'>
-        
-          <div className='box two'> now it is 11.30 central</div>
-          <div className='box three'>item 3</div>
-          </div>
+  const [rotate,setRotate]= useState(false)
+const rotateFunc=()=>{
+setRotate(!rotate)
+}
+return (
+ 
 
-          <div className='lowercontainer'>
-            <div className='box four'>item 4</div>
-          <div className='box five'>item 5</div>
-          <div className='box six'>item 6</div>
-            </div>
-          
-          
-          </div>
-          <div className='footercontainer'>
-  <div className='footer'>
-              <div className='leftfooter'> < FaLinkedin size="2.5vw"/> </div>
-              <div className='rightfooter'> Binyam Tafesse@copyrigh</div>
-      </div>
-          </div>
-        
-        
+ <div className='front'>
+    <div className="allfront" >
+      <div className='upperfrontcontainer'>
 
-    
-     </div>
+              <div className='frontnav'>
+                <div className='foricondiv'> < FaBars className={rotate?'fabars':'nofabars'}  size="40px" onClick={rotateFunc}/></div>
+                    <div> <article className='navarticle'>About Binyam Tafesse</article> </div>
+              </div>
+              <div className={rotate?'sidenav':'nosidenav'}>
+              
+                  <li className='list'>hello</li>
+                  <li className='list'>welcome</li>
+                  <li className='list'>to the</li>
+                  <li className='list'>home </li>
+                  <li className='list'>page of</li>
+                  <li className='list'>the app</li>
+                  <li className='list'>tracker</li>
+                  <li className='list'>log in</li>
+                  <li className='list'>or</li>
+                  <li className='list'>sign up</li>
+                  <li className='list'>to keep</li>
+                  <li className='list'>track</li>
+                  <li className='list'>of your </li>
+              </div>
+                
+       </div>
+             
+      
+ 
+
+          <div className='footerfront'>
+                <div className='footer'>
+                    <div className='leftfooter'> <a  href ='https://www.linkedin.com/in/biniyamtafese' target="blank"> < FaLinkedin size="2.5vw" style={{color:'black'}}/></a> </div>
+                    <div className='rightfooter'> Binyam Tafesse</div>
+               </div>
+          </div>
+    </div>
+ </div>
   )
 }
 
 export default Front
+

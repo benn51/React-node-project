@@ -25,8 +25,7 @@ const navigate= useNavigate()
     const  name = JSON.parse(localStorage.getItem('loggedinuser')).iname
       dispatch( authAction.authenticateUser(true))
       dispatch(authAction.displayLogedinUser(name))   
-      console.log(currentUser)
-     navigate('/signedin')
+      navigate('/signedin')
    }
     },[])
     const logOutFunction= ()=>{
@@ -45,10 +44,7 @@ const navigate= useNavigate()
 
 
   return (
-    
-    
-    
-<div className="App" >
+  <div className="App" >
 <div className='navbarcontainer'> 
   { userisAuthenticated&&<div className='showuser'>
      <Link style={{textDecoration:'none'}} to= {userisAuthenticated? '/signedin':'/home'}><span style={{color:'white'}}>  {currentUser} </span> </Link> 

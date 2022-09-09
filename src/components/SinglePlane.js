@@ -3,16 +3,19 @@ import './singleplane.css'
 import { singleFault } from '../api/index.js'
 import {useDispatch,useSelector} from 'react-redux'
 import { action } from '../store/faults'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,Link} from 'react-router-dom'
 const SinglePlane = () => {
   const dispatch= useDispatch()
   const navigate = useNavigate()
   const [enteredtailNumber,setEnteredtailNumber]=useState('')
-  const [faultarray,setFaultarray] = useState([])
-  const [show,setShow] =useState(true)
+  const [tailnumber,setTailnumber]= useState('')
   const faults= useSelector(state=>state.fault.map((key)=> {return  key}))
 
- 
+ useEffect(()=>{
+   dispatch(action.clearState())
+   console.log('state cleared')
+   setTailnumber('')
+ },[])
   const aFunc=(e)=>{
     setEnteredtailNumber(e.currentTarget.value)
   }
@@ -21,8 +24,9 @@ const SinglePlane = () => {
     const faultObject={tailnumber:enteredtailNumber}
     const returnedFault= await singleFault(faultObject)
     dispatch(action.getfaultbyTailnumber(returnedFault))
+    setTailnumber(enteredtailNumber)
     setEnteredtailNumber('')
-    setShow(false) // to change fault discription display off initially 
+   
   }
 
   const backFunction =()=>{
@@ -35,17 +39,24 @@ const SinglePlane = () => {
               <form>
                  <label htmlFor="tailnumber" className='formlabel'> Tail Number:  </label>   
                  <input className='finput' type="text" name='tailnumber' placeholder='enter tail number only' onChange={aFunc} value={enteredtailNumber}/>
-                  <button className='formbutton' onClick={submitHandler} > Serach </button>
+                  <button type='submit' className='formbutton' onClick={submitHandler} > Serach </button>
               </form> 
             </div>
   
    <div className='detailcontent'>
-     content
+     <div className='tailnumberdiv'> Entered Tail Number: {tailnumber}</div>
+     {
+       faults.map((item)=>{
+       return(
+         <div className='alldetaildiv'>
+  <div className='faultdiscriptiondiv'>  <Link to={`/onedetail/${item._id}`}> <p className='shortfaultp'>{item.shortfault} </p>  </Link>   </div>
+  </div>
+          )
+       })
+     }
    </div>
-        
-
-         <div>
-        <button onClick={backFunction}   className='upperbutton'> back</button>
+     <div>
+        <button onClick={backFunction}   className='upperbutton'> Back</button>
          </div>
     </div>
 </div>

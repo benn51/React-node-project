@@ -32,7 +32,7 @@ const name= decodedGoogleToken.name
 dispatch(authAction.displayLogedinUser(name))
   localStorage.setItem('authToken',JSON.stringify({token:googleToken}))
   localStorage.setItem('loggedinuser',JSON.stringify({iname:name}))
-  localStorage.setItem('authenticateuser',JSON.stringify(true))
+  
   navigate('/')
 dispatch( authAction.authenticateUser(true))  // to protect the athenticated  route from acessed from the url
     }

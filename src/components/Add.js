@@ -87,7 +87,7 @@ setPartname(e.target.value)
 <input placeholder='ata' onChange={ataFunc} className='atachapter' type="text" name="ata" value={ata}/>
 </div>
   </div>
-  <div className='shortfault'>
+  <div className='shorttfault'>
 <textarea placeholder='short fault title not more than 100 characters' onChange={ shortfaultFunc} className='shortfaultlinp' type="text" name="shortfault" maxLength={100} value={shortfault}></textarea>
 </div>
 

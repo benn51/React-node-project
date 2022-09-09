@@ -162,6 +162,7 @@
       }
       .signout{
         background-color:blue;
+        font-size:small;
       }
       .showuser{
         background-color:brown;
@@ -187,9 +188,34 @@
 
   .item{
     height:4vh;
-    width:15vw;
+    width:11vw;
+    margin-right:15px;
+  }
+  .signout{
+    height:4vh;
+    width:11vw;
     margin-left:15px;
   }
+  .signout:hover{
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    border-radius:0px;
+   }
+  .item:hover{
+   border-bottom-style: solid;
+   border-bottom-color: white;
+   border-radius:0px;
+  }
+  .plus{
+    height:4vh;
+    width:11vw;
+    margin-left:15px;
+  }
+  .plus:hover{
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    border-radius:0px;
+   }
 
   .logedinuser{
     height:4vh;

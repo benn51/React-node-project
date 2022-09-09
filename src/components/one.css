@@ -37,6 +37,7 @@
     text-align: left;
     word-wrap: break-word;
     font-size:calc(1.0vw);
+    margin-top:4vh;
 }
 .onesolution{
     height:25vh;
@@ -66,4 +67,13 @@
     width:85vw;
     height:5vh;
 
+}
+.solutionp{
+    width:75vw;
+    word-wrap: break-word;
+}
+.shortfaultarticle{
+    width:75vw;
+    word-wrap: break-word;
+    
 }

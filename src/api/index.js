@@ -1,6 +1,5 @@
 import axios from 'axios'
-import {action,authAction} from '../store/faults'
-import  {useDispatch}  from 'react-redux'
+import {action} from '../store/faults'
 const API= axios.create({baseURL:"https://biniapp-3.herokuapp.com"})    //" http://localhost:5000/"
 API.interceptors.request.use((req)=>{
 const token= JSON.parse(localStorage.getItem('authToken')).token
@@ -45,8 +44,7 @@ export const singleFault = async (obj)=>{
 }
 //function tocreate new user
   export const createNewuser= async (user)=>{
-   
-    const url="https://biniapp-3.herokuapp.com/home/newuser"    
+   const url="https://biniapp-3.herokuapp.com/home/newuser"    
    const {data} = await axios.post(url,user)
  }
  export const previousPagefunc=()=>{
@@ -75,7 +73,7 @@ dispatch(action.deletSingleFault(id))
 
  }*/
  export const nextPagefunc = async ()=>{
-  const {data} = await API.get(`home/in?page=4 type=dec`)
+  const {data} = await API.get(`home/in?page=10 type=dec`)
 return data
 
 }
