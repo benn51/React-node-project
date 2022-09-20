@@ -2,14 +2,19 @@
 .front{
     width:100vw;
     height:90vh;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:black;
+   
   }
 .allfront{
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content: end;
-    background-color:blueviolet;
     height:90vh;
+    background-color:burlywood;
+   
+    
 }
 
 .upperfrontcontainer{
@@ -22,13 +27,18 @@
  
 
 }
+.profileandside{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .frontnav{
     display: flex;
     align-items:center;
     justify-content:start;
     width:100vw;
     height:10vh;
-    background-color:darkgrey;
+   
     border-radius: 5px;
    transition: all .9s ;
    
@@ -38,7 +48,7 @@
 .navarticle{
     font-size:larger;
     font-style:italic;
-    margin-left:25vw;
+    margin-left:45vw;
 }
 .footer{
     display:flex;
@@ -64,23 +74,6 @@ margin-left:20vw;
     justify-content: start;
    
 }
-.box{
-    
-    width:25vw;
-    height:10vh;
-    border-color:white;
-    background-color:darkgrey;
-    border-radius: 5px;
-    margin-top:1vh;;
-    transition: all .9s ;
-    align-content: center;
-    justify-content:center;
-
-}
-.box:hover{
-    transform:scale(1.1)
-
-}
 .fabars{
     transform: rotate(90deg);
     transition-duration: 0.8s;
@@ -95,25 +88,181 @@ margin-left:20vw;
     display:none;
 }
 .sidenav{
-    display: flex;
-    flex-direction: column;
-   align-items: start;
-    background-color:greenyellow;
-   justify-content:start;
-   height:60vh;
-   width:45vw;
+    
    display:none;
 }
 .nosidenav{
 display:none;
 }
+.slider{
+   
+   display: flex;
+   width:95vw;
+   height:80vh;
+   overflow:hidden;
+   margin-left:2vw;
+ 
+}
+.image{
+   
+    width:45vw;
+    height:45vh;
+    margin-top:-70vh;
+    position:relative;
+    animation-name:four;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+  
+}
+.profiledetail{
+    width:95vw;
+    height:90vh;
+   
+    border-radius:5px;
+   }
+.imagereverse{
+    width:40vw;
+    height:40vh;
+    margin-top:-70vh;
+    position:relative;
+    animation-name:reverser;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+    border-radius:5px;
+}
+.frontskills{
+    display:flex;
+    flex-direction: column;
+
+}
+.frontskillsdetail{
+    display:flex;
+    width:90vw;
+    height:40vh;
+   
+    margin-left:3vw;
+   
+}
+.profiletitle{
+    background-image: url('./pictures/profile2.jpeg');
+    background-size:cover;
+   transition-duration: 0.8s;
+    width:40vw;
+    height:35vh;
+   margin-top:2vh;
+   border-radius:5px;
+  
+}
+  
+.profiletitlep{
+    text-align: left; 
+  color:black;
+}
+
+.frontskillslist{
+width:35vw;
+height:35vh;
+display: flex;
+flex-direction: column;
+justify-content:space-evenly;
+background-color:aqua ;
+margin-left:1vw;
+margin-top:2vh;
+transition-duration: 0.8s;
+border-radius:10px;
+}
+.frontpersonalproject{
+    width:35vw;
+    height:35vh;
+    background-image: url('./pictures/plane.jpeg');
+    background-size:cover;
+    margin-left:1vw;
+    margin-top:2vh;
+    transition-duration: 0.8s;
+    border-radius:10px;
+}
+.frontpersonalprojectp{
+    text-align: left; 
+   padding: 0vw 1vw 0vw 1vw;
+
+}
+.frontworkexperience{
+    width:65vw;
+    height:35vh;
+    margin-top:1vh;
+    position:relative;
+    background-color:aqua;
+    animation-name:four;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+    border-radius:10px;
+    margin-bottom:1vh;
+}
+.frontworkexperiencereverse{
+    width:65vw;
+    height:35vh;
+    margin-top:1vh;
+    position:relative;
+    background-color:aqua;
+    animation-name:reverser;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+    border-radius:10px;
+    margin-bottom:1vh;
+}
+.workexperiencelist{
+    display:flex;
+    flex-direction: column;
+    align-items:start;
+    text-align: left;
+    
+}
+.workexperiencelist li{
+    padding:0 2vw 0vh 1vw;
+}
+
+
+@keyframes reverser {
+    0%   {left:-55vw;opacity :0.9}
+    100% {left:15vw; opacity :0.9 }  
+}
+
+@keyframes four {
+    0%   {left:30vw;opacity :0.9}
+    95% {background-color: green;}
+    100% {left:95vw; opacity :0.9; display:'none' }  
+}
+
+@media (min-width:800px){
+    .frontpersonalproject:hover{
+        scale: 1.1;
+    }
+    .frontskillslist:hover{
+        scale: 1.1;
+    }
+    .profiletitle:hover{
+        scale: 1.1;
+    }
+
+}
+
 
 @media (max-width:800px) {
-   
+   .front{
+       height:100%;
+       font-size:small;
+   }
+   .allfront{
+       display:flex;
+       flex-direction:column;
+       height:100%;
+   }
     .nosidenav{
       display:none;
      }
      .sidenav{
+         display:flex;
+         
         display:none;
      }
 
@@ -131,22 +280,101 @@ display:none;
         size:30vw;
        
      }
-     .sidenav{
-         display:flex;
-        flex-direction: column;
-      align-items:center;
-        justify-content:space-evenly;
+     .forlinkedin:first-child{
+         width:15vw;
      }
+     .sidenav{
+        display:flex;
+         width:63vw;
+         height:15vh;
+       border-radius:15px;
+        align-items:center;
+        justify-content:center;
+        background-color:white;
+        margin-bottom: 2vh;
+       
+     }
+
+.sidelist1{
+    display:flex;
+    width:25vw;
+    height:15vh;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-evenly;
+    background-color:whitesmoke;
+    
+}
+.sidelist2{
+    display:flex;
+    width:25vw;
+    height:15vh;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-evenly;
+    background-color:whitesmoke;
+    margin-left:1vw;
+}
  
      .nosidenav{
     display: none;
     }
     .list{
-        width:20vw;
+        width:10vw;
        
     }
     .list:hover{
         border-bottom-style:solid;
         border-bottom-color:black;
+    }
+    .navarticle{
+        margin-left:30vw;
+    }
+    .image{
+        margin-top:-110vh;
+    }
+    .imagereverse{
+        margin-top:-110vh;
+    }
+    .profiledetail{
+      height:100vh;
+       overflow:auto;
+    }
+    .frontskills{
+        align-items:center;
+        width:90vw;
+    }
+    .frontskillsdetail{
+        flex-direction: column;
+        align-items:center;
+        height:auto;
+        overflow:auto;
+    }
+    .frontworkexperience{
+        animation:none;
+        margin-left:3vw;
+        width:65vw;
+    }
+    .frontworkexperiencereverse{
+        animation:none;
+        margin-left:3vw;
+        width:65vw;
+    }
+    .slider{
+        height:95vh;
+    }
+    .frontpersonalproject{
+        width:65vw;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+
+    }
+    .frontskillslist{
+        width:65vw;
+    }
+    .profiletitle{
+        width:65vw;
     }
   }

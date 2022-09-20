@@ -2,3 +2,53 @@
     width:100vw;
     height:85vh;
 }
+.innerabout{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:start;
+    width:80vw;
+    height:85vh;
+    margin-left:3vw;
+}
+.abouth1{
+    margin-left:20vw;
+}
+
+.innerdiv1{
+    display:flex;
+    align-items:start;
+    justify-content:start;
+    width:90vw;
+    height:85vh;
+    margin-left:3vw;
+}
+.innerdiv2{
+    width:30VW;
+    height:40vh;
+    margin-left:20vw;
+    text-align: left;
+    background-color:whitesmoke;
+    padding:2vw;
+}
+.innerdiv3{
+    width:30VW;
+    height:40vh;
+    margin-left:2vw;
+    text-align: left;
+    background-color:whitesmoke;
+    padding:2vw;
+}
+@media (max-width:800px) {
+
+    .innerdiv2{
+        width:60VW;
+        height:80vh;
+      
+    }
+    .innerdiv3{
+        width:60VW;
+        height:80vh;
+       
+    } 
+}

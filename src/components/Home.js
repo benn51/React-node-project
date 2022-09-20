@@ -14,6 +14,7 @@ const Home = () => {
   const [isemail,setIsemail]= useState(false)
   const [emailOrusername,setEmailOrusername]= useState('')
   const [password,setPassword]= useState('')
+  const [enteredcredential,setEnteredcredential]=useState(true)
 useEffect(()=>{
    /*global google */
   google.accounts.id.initialize({
@@ -33,7 +34,7 @@ dispatch(authAction.displayLogedinUser(name))
   localStorage.setItem('authToken',JSON.stringify({token:googleToken}))
   localStorage.setItem('loggedinuser',JSON.stringify({iname:name}))
   
-  navigate('/')
+  navigate('/signedin')
 dispatch( authAction.authenticateUser(true))  // to protect the athenticated  route from acessed from the url
     }
     const aFunc=(e)=>{
@@ -61,10 +62,13 @@ dispatch( authAction.authenticateUser(true))  // to protect the athenticated  ro
         const name= user[0].name
         const fname =name +' ' +lname
         dispatch(authAction.displayLogedinUser(fname))
-        navigate('/')
+        navigate('/signedin')
         localStorage.setItem('loggedinuser',JSON.stringify({iname:name}))
          localStorage.setItem('authToken',JSON.stringify({token:data.acessToken}))
         dispatch( authAction.authenticateUser(true))  //// to protect the athenticated route from getting acessed from the url
+    }
+    else{
+      setEnteredcredential(false)
     }
     
     }
@@ -95,6 +99,7 @@ setPassword('')
     </form>
    
 <div className='or'>------------------or ------------------    </div>
+   {!enteredcredential&& <div style={{color:'red', fontSize:'1.2vw', marginTop:'3vh'}}> incorrect credential </div>}
 
 <div id='googlebtn'></div>
  </div>

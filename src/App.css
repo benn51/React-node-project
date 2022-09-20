@@ -188,13 +188,15 @@
 
   .item{
     height:4vh;
-    width:11vw;
-    margin-right:15px;
+    width:15vw;
+    margin-right:25px;
+  
   }
   .signout{
     height:4vh;
     width:11vw;
-    margin-left:15px;
+   
+   
   }
   .signout:hover{
     border-bottom-style: solid;
@@ -241,6 +243,12 @@
     }
     .li{
       font-size:medium;
-    }
+      }
+      .helpdropdown{
+        display:none;
+      }
+      .downcaret{
+        display:none;
+      }
  
   }

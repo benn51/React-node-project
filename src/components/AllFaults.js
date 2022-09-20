@@ -45,7 +45,7 @@ return (
           <div> <button onClick={()=> dispatch(nextPagefunc())} className='nxtprevbtn'>Next Page</button></div>
           
   </div>
-  <div className='pagenumber'><span>{pagenumber}</span></div>
+ 
    <div> <SingleFault/>  </div>  
   
      </div>

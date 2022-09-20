@@ -36,7 +36,7 @@ const One = () => {
                        
               </div>
              
-             <button onClick={()=>{navigate(-1)}}> Back</button>
+             <button className='backbutton' onClick={()=>{navigate(-1)}}>  Back</button>
 
 
       </div>
