@@ -35,21 +35,21 @@ return (
 
                 <div className={rotate?'sidenav':'nosidenav'}>
               <div className='sidelist1'>
-                 <li className='list'>hello</li>
-                  <li className='list'>welcome</li>
-                  <li className='list'>to the</li>
-                  <li className='list'>home </li>
-                  <li className='list'>page of</li>
-                  <li className='list'>the app</li>
+                 <li className='list'>Hello</li>
+                  <li className='list'>Welcome</li>
+                  <li className='list'>to the Home</li>
+                  <li className='list'> Page of the</li>
+                  <li className='list'>Fault Tracker</li>
+                  <li className='list'> Log in with Google</li>
               </div>
               <div className='sidelist2'>
                 
-                  <li className='list'>tracker</li>
-                  <li className='list'>log in</li>
-                   <li className='list'>sign up</li>
-                  <li className='list'>to keep</li>
-                  <li className='list'>track</li>
-                  <li className='list'>of your </li>
+                  <li className='list'>or create </li>
+                  <li className='list'>Account </li>
+                   <li className='list'>to use the  </li>
+                  <li className='list'> Aircraft </li>
+                  <li className='list'>Fault Tracker</li>
+                  <li className='list'>Web App</li>
               </div>
                  
                  
@@ -127,8 +127,8 @@ return (
                                   
            <div className='footerfront'>
                 <div className='footer'>
-                    <div className='leftfooter'> <a  href ='https://www.linkedin.com/in/biniyamtafese' target="blank"> <div className='forlinkedin'>< FaLinkedin size="2.5vw" style={{color:'black'}}/></div> </a> </div>
-                    <div className='rightfooter'> @ Binyam Tafesse  <span> E-mail: tafessebinyam51@gmail.com </span> <span style={{marginLeft:'2vw'}}>Mob:615-6095699  </span></div>
+                    <div className='leftfooter'> <a  href ='https://www.linkedin.com/in/biniyamtafese' target="blank"> <div className='forlinkedin'>< FaLinkedin className='falinkedin'   size="2.5vw" style={{color:'black'}}/></div> </a> </div>
+                    <div className='rightfooter'> Contact - <span> E-mail: tafessebinyam51@gmail.com </span> <span style={{marginLeft:'2vw'}}>Mob:615-6095699  </span></div>
                </div>
           </div>
     </div>

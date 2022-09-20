@@ -82,3 +82,9 @@
     width:5vw;
     height:4vh;
 }
+
+@media (max-width:800px) {
+    .backbutton{
+        width:12vw;
+    }
+}

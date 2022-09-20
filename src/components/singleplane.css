@@ -25,7 +25,7 @@
 
 .formbutton{
      width:15vw;
-    background-color:coral;
+    background-color:burlywood;
     height:5vh;
     margin-left:2vw;
 }
@@ -50,13 +50,13 @@
     margin-top:1vh;
     height:4vh;
     width:7vw;
-    background-color:antiquewhite;
+    background-color:burlywood;
 }
 .alldetaildiv{
     display:flex;
     justify-content:start;
     margin-left:3vw;
-    background-color:yellow;
+   
     margin-top:2vh;
     width:80vw;
 
@@ -69,6 +69,10 @@
     margin-top:2vh;
 }
 
-
+@media (max-width:800px) {
+    .upperbutton{
+        width:12vw;
+    }
+}
 
 

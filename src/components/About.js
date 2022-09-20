@@ -5,7 +5,7 @@ const About = () => {
     <div className='about'>
          <div className='innerabout'>
              <div>
-                 <h1 className='abouth1'> ABOUT AIRPLANE FAULT TRACKER</h1>
+                 <h2 className='abouth1'> ABOUT AIRPLANE FAULT TRACKER</h2>
              </div>
             
     
@@ -26,8 +26,7 @@ const About = () => {
            <div className='innerdiv3'>
               <h3> App Feautures</h3>
                <li> Add faults encountered</li>
-               <li> record detail description of the problem to give who ever is reading
-                 a good understanding of the problem </li>
+               <li> record detail description of the problem to give who ever is reading a good understanding of the problem </li>
                 <li>get all the fault records </li>
                 <li>review all the solutions for the maintainance issues</li>
                <li>get the time the fault occured</li>

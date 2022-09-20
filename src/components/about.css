@@ -1,6 +1,7 @@
 .about{
     width:100vw;
     height:85vh;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .innerabout{
     display:flex;
@@ -24,6 +25,10 @@
     margin-left:3vw;
 }
 .innerdiv2{
+    display:flex;
+    flex-direction:column;
+    align-items:start;
+    justify-content:start;
     width:30VW;
     height:40vh;
     margin-left:20vw;
@@ -32,6 +37,10 @@
     padding:2vw;
 }
 .innerdiv3{
+    display:flex;
+    flex-direction:column;
+    align-items:start;
+    justify-content:start;
     width:30VW;
     height:40vh;
     margin-left:2vw;
@@ -41,14 +50,17 @@
 }
 @media (max-width:800px) {
 
+    .about{
+        font-size:small;
+    }
     .innerdiv2{
-        width:60VW;
-        height:80vh;
+        width:70VW;
+        height:65vh;
       
     }
     .innerdiv3{
-        width:60VW;
-        height:80vh;
+        width:70VW;
+        height:65vh;
        
     } 
 }

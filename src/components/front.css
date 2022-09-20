@@ -144,11 +144,15 @@ display:none;
    
 }
 .profiletitle{
+    display:flex;
+    flex-direction:column;
     background-image: url('./pictures/profile2.jpeg');
     background-size:cover;
    transition-duration: 0.8s;
     width:40vw;
     height:35vh;
+    align-items: center;
+    justify-content: center;
    margin-top:2vh;
    border-radius:5px;
   
@@ -172,6 +176,10 @@ transition-duration: 0.8s;
 border-radius:10px;
 }
 .frontpersonalproject{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
     width:35vw;
     height:35vh;
     background-image: url('./pictures/plane.jpeg');
@@ -187,6 +195,10 @@ border-radius:10px;
 
 }
 .frontworkexperience{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
     width:65vw;
     height:35vh;
     margin-top:1vh;
@@ -196,9 +208,13 @@ border-radius:10px;
     animation-duration: 6s;
     animation-fill-mode: both;
     border-radius:10px;
-    margin-bottom:1vh;
+    margin-bottom:2vh;
 }
 .frontworkexperiencereverse{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
     width:65vw;
     height:35vh;
     margin-top:1vh;
@@ -208,7 +224,7 @@ border-radius:10px;
     animation-duration: 6s;
     animation-fill-mode: both;
     border-radius:10px;
-    margin-bottom:1vh;
+    margin-bottom:2vh;
 }
 .workexperiencelist{
     display:flex;
@@ -228,7 +244,7 @@ border-radius:10px;
 }
 
 @keyframes four {
-    0%   {left:30vw;opacity :0.9}
+    0%   {left:15vw;opacity :0.9}
     95% {background-color: green;}
     100% {left:95vw; opacity :0.9; display:'none' }  
 }
@@ -260,12 +276,7 @@ border-radius:10px;
     .nosidenav{
       display:none;
      }
-     .sidenav{
-         display:flex;
-         
-        display:none;
-     }
-
+   
      .fabars{
         size:3vw;
         width:4vw;
@@ -280,25 +291,23 @@ border-radius:10px;
         size:30vw;
        
      }
-     .forlinkedin:first-child{
-         width:15vw;
-     }
+    
      .sidenav{
         display:flex;
          width:63vw;
-         height:15vh;
+         height:20vh;
        border-radius:15px;
         align-items:center;
         justify-content:center;
-        background-color:white;
-        margin-bottom: 2vh;
+         
+      
        
      }
 
 .sidelist1{
     display:flex;
     width:25vw;
-    height:15vh;
+    height:20vh;
     flex-direction:column;
     align-items:center;
     justify-content:space-evenly;
@@ -308,7 +317,7 @@ border-radius:10px;
 .sidelist2{
     display:flex;
     width:25vw;
-    height:15vh;
+    height:20vh;
     flex-direction:column;
     align-items:center;
     justify-content:space-evenly;
@@ -320,7 +329,7 @@ border-radius:10px;
     display: none;
     }
     .list{
-        width:10vw;
+        width:17vw;
        
     }
     .list:hover{
@@ -354,11 +363,13 @@ border-radius:10px;
         animation:none;
         margin-left:3vw;
         width:65vw;
+        height:55vh;
     }
     .frontworkexperiencereverse{
         animation:none;
         margin-left:3vw;
         width:65vw;
+        height:55vh;
     }
     .slider{
         height:95vh;
@@ -376,5 +387,15 @@ border-radius:10px;
     }
     .profiletitle{
         width:65vw;
+        height:45vh;
+
+    }
+   
+    .falinkedin{
+       
+        width:5vh;
+        height:5vh;
+       background-color:white;
+       
     }
   }

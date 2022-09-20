@@ -61,11 +61,19 @@ dispatch( authAction.authenticateUser(true))  // to protect the athenticated  ro
         const lname= user[0].lastname
         const name= user[0].name
         const fname =name +' ' +lname
-        dispatch(authAction.displayLogedinUser(fname))
-        navigate('/signedin')
-        localStorage.setItem('loggedinuser',JSON.stringify({iname:name}))
-         localStorage.setItem('authToken',JSON.stringify({token:data.acessToken}))
-        dispatch( authAction.authenticateUser(true))  //// to protect the athenticated route from getting acessed from the url
+        console.log(fname.length)
+        //added code to prevent empty entry
+        if(fname.length>1){
+              dispatch(authAction.displayLogedinUser(fname))
+             navigate('/signedin')
+              localStorage.setItem('loggedinuser',JSON.stringify({iname:name}))
+              localStorage.setItem('authToken',JSON.stringify({token:data.acessToken}))
+               dispatch( authAction.authenticateUser(true))  //// to protect the athenticated route from getting acessed from the url
+             }
+             else{
+              setEnteredcredential(false)
+            }
+      
     }
     else{
       setEnteredcredential(false)
@@ -99,7 +107,7 @@ setPassword('')
     </form>
    
 <div className='or'>------------------or ------------------    </div>
-   {!enteredcredential&& <div style={{color:'red', fontSize:'1.2vw', marginTop:'3vh'}}> incorrect credential </div>}
+   <div className={!enteredcredential? 'incorrectcredential':"nodisplay"}>  incorrect credential </div>
 
 <div id='googlebtn'></div>
  </div>
