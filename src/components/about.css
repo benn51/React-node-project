@@ -5,12 +5,13 @@
 }
 .innerabout{
     display:flex;
+    width:95vw;
+    height:85vh;
     flex-direction:column;
     align-items:center;
-    justify-content:start;
-    width:80vw;
-    height:85vh;
-    margin-left:3vw;
+    justify-content:center;
+  
+ 
 }
 .abouth1{
     margin-left:20vw;
@@ -18,11 +19,12 @@
 
 .innerdiv1{
     display:flex;
-    align-items:start;
-    justify-content:start;
-    width:90vw;
+    width:95vw;
     height:85vh;
-    margin-left:3vw;
+    align-items:start;
+    justify-content:center;
+  
+ 
 }
 .innerdiv2{
     display:flex;
@@ -31,7 +33,7 @@
     justify-content:start;
     width:30VW;
     height:40vh;
-    margin-left:20vw;
+
     text-align: left;
     background-color:whitesmoke;
     padding:2vw;
@@ -51,15 +53,18 @@
 @media (max-width:800px) {
 
     .about{
-        font-size:small;
+        font-size:smaller;
+    }
+    .innerabout{
+
     }
     .innerdiv2{
-        width:70VW;
+        width:40VW;
         height:65vh;
       
     }
     .innerdiv3{
-        width:70VW;
+        width:40VW;
         height:65vh;
        
     } 

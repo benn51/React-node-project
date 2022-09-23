@@ -29,18 +29,19 @@ return (
       
 
               <div className='frontnav'>
-                <div className='foricondiv'> < FaBars className={rotate?'fabars':'nofabars'}  size="40px" onClick={rotateFunc}/></div>
-                   {/* <div> <article className='navarticle'>About Binyam Tafesse</article> </div>*/}
+                <div className='foricondiv'> < FaBars className={rotate?'fabars':'nofabars'}  size="40px" onClick={rotateFunc}/>
+                </div>
+                   {/* <div> <article className='navarticle'>About Binyam Tafesse</article> </div>*/} 
               </div>
 
                 <div className={rotate?'sidenav':'nosidenav'}>
               <div className='sidelist1'>
-                 <li className='list'>Hello</li>
-                  <li className='list'>Welcome</li>
+                 <li className='list'>Hello guest</li>
+                  <li className='list'>Welcome to</li>
                   <li className='list'>to the Home</li>
                   <li className='list'> Page of the</li>
                   <li className='list'>Fault Tracker</li>
-                  <li className='list'> Log in with Google</li>
+                  <li className='list'> Use Google</li>
               </div>
               <div className='sidelist2'>
                 
@@ -51,10 +52,15 @@ return (
                   <li className='list'>Fault Tracker</li>
                   <li className='list'>Web App</li>
               </div>
-                 
-                 
-                 
+              <div className='sidelist1'>
+                 <li className='list'>Hello guest</li>
+                  <li className='list'>Welcome to</li>
+                  <li className='list'>to the Home</li>
+                  <li className='list'> Page of the</li>
+                  <li className='list'>Fault Tracker</li>
+                  <li className='list'> Use Google</li>
               </div>
+               </div>
               <div className='upperfrontcontainer'>
               <div  className='profileandside'>
              
@@ -124,6 +130,7 @@ return (
               </div>
                </div>
         </div>
+       
                                   
            <div className='footerfront'>
                 <div className='footer'>
